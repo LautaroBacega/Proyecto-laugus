@@ -8,7 +8,7 @@ const pricingOptions = [
     id: "landing",
     icon: Globe,
     title: "Landing Page",
-    price: "$100.000 ARS",
+    price: "$80.000 ARS",
     description: "Una página web de una sola sección enfocada en presentar un servicio o producto de forma clara.",
     useCase: "Ideal para generar leads, mostrar información clave y convertir visitantes en contactos.",
     includes: [

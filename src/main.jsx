@@ -4,6 +4,16 @@ import { BrowserRouter } from "react-router-dom"
 import "./index.css"
 import App from "./App.jsx"
 
+import AOS from "aos"
+
+// Initialize AOS with smooth settings
+AOS.init({
+  duration: 800,
+  easing: "ease-out-cubic",
+  once: true,
+  offset: 50,
+})
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>

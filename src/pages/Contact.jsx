@@ -35,8 +35,10 @@ export default function Contact() {
     <div className="py-20">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-[#0f172a] mb-4">Contacto</h1>
-          <p className="text-[#475569] max-w-2xl mx-auto">
+          <h1 className="text-4xl md:text-5xl font-bold text-[#0d233f] mb-4" data-aos="fade-down">
+            Contacto
+          </h1>
+          <p className="text-[#475569] max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
             ¿Tenés un proyecto en mente? Contanos y te respondemos en pocas horas.
           </p>
         </div>
@@ -44,13 +46,17 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Options */}
           <div>
-            <div className="bg-[#0f172a] text-white p-8 rounded-2xl mb-6">
+            <div
+              className="bg-[#0d233f] text-white p-8 rounded-2xl mb-6 card-hover"
+              data-aos="fade-right"
+              data-aos-delay="200"
+            >
               <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 bg-[#06b6d4] rounded-xl flex items-center justify-center">
-                  <MessageCircle className="w-6 h-6 text-[#0f172a]" />
+                <div className="w-12 h-12 bg-[#06b6d4] rounded-xl flex items-center justify-center animate-float">
+                  <MessageCircle className="w-6 h-6 text-[#0d233f]" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg">WhatsApp</h3>
+                  <h3 className="font-semibold text-lg hover-lift">WhatsApp</h3>
                   <p className="text-gray-400 text-sm">La forma más rápida de contactarnos</p>
                 </div>
               </div>
@@ -58,43 +64,54 @@ export default function Contact() {
                 href="https://wa.me/5491112345678"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block w-full bg-[#06b6d4] text-[#0f172a] text-center py-3 rounded-lg font-semibold hover:bg-[#22d3ee] transition-colors"
+                className="block w-full bg-[#06b6d4] text-[#0d233f] text-center py-3 rounded-lg font-semibold hover:bg-[#22d3ee] transition-colors btn-hover"
               >
                 Enviar mensaje por WhatsApp
               </a>
             </div>
 
-            <div className="bg-white p-6 rounded-2xl border border-gray-100 flex items-center gap-4">
+            <div
+              className="bg-white p-6 rounded-2xl border border-gray-100 flex items-center gap-4 card-hover"
+              data-aos="fade-right"
+              data-aos-delay="300"
+            >
               <div className="w-12 h-12 bg-[#06b6d4]/10 rounded-xl flex items-center justify-center">
-                <Clock className="w-6 h-6 text-[#06b6d4]" />
+                <Clock className="w-6 h-6 text-[#06b6d4] icon-hover" />
               </div>
               <div>
-                <h3 className="font-semibold text-[#0f172a]">Tiempo de respuesta</h3>
+                <h3 className="font-semibold text-[#0d233f] hover-lift">Tiempo de respuesta</h3>
                 <p className="text-[#475569] text-sm">Respondemos en pocas horas</p>
               </div>
             </div>
           </div>
 
           {/* Contact Form */}
-          <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+          <div
+            className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 card-hover"
+            data-aos="fade-left"
+            data-aos-delay="200"
+          >
             {submitted ? (
-              <div className="text-center py-8">
-                <div className="w-16 h-16 bg-[#06b6d4]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="text-center py-8" data-aos="zoom-in">
+                <div className="w-16 h-16 bg-[#06b6d4]/10 rounded-full flex items-center justify-center mx-auto mb-4 animate-float">
                   <Send className="w-8 h-8 text-[#06b6d4]" />
                 </div>
-                <h3 className="text-xl font-semibold text-[#0f172a] mb-2">¡Mensaje enviado!</h3>
+                <h3 className="text-xl font-semibold text-[#0d233f] mb-2">¡Mensaje enviado!</h3>
                 <p className="text-[#475569]">Te contactaremos pronto.</p>
-                <button onClick={() => setSubmitted(false)} className="mt-4 text-[#06b6d4] font-medium hover:underline">
+                <button
+                  onClick={() => setSubmitted(false)}
+                  className="mt-4 text-[#06b6d4] font-medium hover:underline hover-lift"
+                >
                   Enviar otro mensaje
                 </button>
               </div>
             ) : (
               <form onSubmit={handleSubmit}>
-                <h3 className="text-xl font-semibold text-[#0f172a] mb-6">Envianos un mensaje</h3>
+                <h3 className="text-xl font-semibold text-[#0d233f] mb-6 hover-lift">Envianos un mensaje</h3>
 
                 <div className="space-y-4">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-[#0f172a] mb-2">
+                    <label htmlFor="name" className="block text-sm font-medium text-[#0d233f] mb-2">
                       Nombre
                     </label>
                     <input
@@ -104,13 +121,13 @@ export default function Contact() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#06b6d4] focus:border-transparent transition-shadow"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#06b6d4] focus:border-transparent transition-all duration-300"
                       placeholder="Tu nombre"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-[#0f172a] mb-2">
+                    <label htmlFor="email" className="block text-sm font-medium text-[#0d233f] mb-2">
                       Email
                     </label>
                     <input
@@ -120,13 +137,13 @@ export default function Contact() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#06b6d4] focus:border-transparent transition-shadow"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#06b6d4] focus:border-transparent transition-all duration-300"
                       placeholder="tu@email.com"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-[#0f172a] mb-2">
+                    <label htmlFor="message" className="block text-sm font-medium text-[#0d233f] mb-2">
                       Mensaje
                     </label>
                     <textarea
@@ -136,7 +153,7 @@ export default function Contact() {
                       onChange={handleChange}
                       required
                       rows={4}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#06b6d4] focus:border-transparent transition-shadow resize-none"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#06b6d4] focus:border-transparent transition-all duration-300 resize-none"
                       placeholder="Contanos sobre tu proyecto..."
                     />
                   </div>
@@ -144,7 +161,7 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-[#0f172a] text-white py-3 rounded-lg font-semibold hover:bg-[#1e293b] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full bg-[#0d233f] text-white py-3 rounded-lg font-semibold hover:bg-[#1e3a5f] transition-colors disabled:opacity-50 disabled:cursor-not-allowed btn-hover"
                   >
                     {isSubmitting ? "Enviando..." : "Enviar mensaje"}
                   </button>

@@ -42,8 +42,10 @@ export default function Portfolio() {
     <div className="py-20">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-[#0f172a] mb-4">Portfolio</h1>
-          <p className="text-[#475569] max-w-2xl mx-auto">
+          <h1 className="text-4xl md:text-5xl font-bold text-[#0d233f] mb-4" data-aos="fade-down">
+            Portfolio
+          </h1>
+          <p className="text-[#475569] max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
             Algunos de los proyectos que hemos desarrollado para nuestros clientes.
           </p>
         </div>
@@ -52,20 +54,22 @@ export default function Portfolio() {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-shadow group"
+              className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 card-hover group"
+              data-aos="fade-up"
+              data-aos-delay={100 + index * 100}
             >
               <div className="aspect-video overflow-hidden">
                 <img
                   src={project.image || "/placeholder.svg"}
                   alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
               <div className="p-6">
-                <span className="text-xs font-medium text-[#06b6d4] bg-[#06b6d4]/10 px-3 py-1 rounded-full">
+                <span className="text-xs font-medium text-[#06b6d4] bg-[#06b6d4]/10 px-3 py-1 rounded-full transition-all duration-300 hover:bg-[#06b6d4] hover:text-white">
                   {project.category}
                 </span>
-                <h3 className="text-xl font-semibold text-[#0f172a] mt-3 mb-2">{project.title}</h3>
+                <h3 className="text-xl font-semibold text-[#0d233f] mt-3 mb-2 hover-lift">{project.title}</h3>
                 <p className="text-[#475569] text-sm">{project.description}</p>
               </div>
             </div>

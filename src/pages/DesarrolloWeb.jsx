@@ -1,8 +1,8 @@
 "use client"
 
 import { useState } from "react"
+import { Link } from "react-router-dom"
 import {
-  Check,
   Globe,
   GraduationCap,
   ShoppingCart,
@@ -17,6 +17,7 @@ import {
   TrendingUp,
   Shield,
   Zap,
+  ArrowRight,
 } from "lucide-react"
 
 const processSteps = [
@@ -211,77 +212,37 @@ function CollapsibleSection({ title, children, defaultOpen = false, gradient = "
   )
 }
 
-function ProductCard({ title, price, icon: Icon, features, gradient, whatsappMessage, children }) {
-  const [isOpen, setIsOpen] = useState(false)
-
+function ProductCard({ title, price, description, icon: Icon, gradient, to }) {
   return (
-    <div className="relative group self-start">
+    <div className="relative group h-full">
       <div
         className={`absolute -inset-[2px] bg-gradient-to-r ${gradient} rounded-3xl opacity-50 group-hover:opacity-100 transition-opacity duration-500 blur-md`}
       ></div>
-      <div className="relative bg-white rounded-3xl p-5 md:p-6 shadow-xl flex flex-col border border-gray-100">
-        {/* Header con icono, título y precio */}
-        <div className="flex items-center gap-4 mb-4">
-          <div
-            className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${gradient} flex items-center justify-center shadow-lg`}
-          >
-            <Icon className="w-7 h-7 text-white" />
-          </div>
-          <div>
-            <h3 className="text-xl md:text-2xl font-bold text-[#0d233f] font-display">{title}</h3>
-            <p className={`text-lg font-bold bg-gradient-to-r ${gradient} bg-clip-text text-transparent`}>{price}</p>
-          </div>
-        </div>
-
-        {/* Botón desplegable */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className={`w-full flex items-center justify-between p-3 rounded-xl bg-gradient-to-r ${gradient} bg-opacity-10 mb-4 hover:shadow-md transition-all duration-300`}
-          style={{ background: `linear-gradient(to right, rgba(6, 182, 212, 0.1), rgba(59, 130, 246, 0.1))` }}
-        >
-          <span className="text-sm font-semibold text-[#0d233f]">Ver detalles del producto</span>
-          <ChevronDown
-            className={`w-5 h-5 text-[#06b6d4] transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
-          />
-        </button>
-
-        {/* Contenido desplegable */}
+      <div className="relative bg-white rounded-3xl p-5 md:p-6 shadow-xl flex flex-col h-full border border-gray-100">
+        {/* Header con icono */}
         <div
-          className={`transition-all duration-500 ease-in-out overflow-hidden ${isOpen ? "max-h-[1500px] opacity-100 mb-4" : "max-h-0 opacity-0"}`}
+          className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${gradient} flex items-center justify-center shadow-lg mb-4`}
         >
-          {children}
-
-          {features && (
-            <div className="mt-4">
-              <h4 className="font-semibold text-[#0d233f] mb-3 text-sm">¿Qué incluye?</h4>
-              <div className="flex flex-wrap gap-2">
-                {features.map((feature, index) => (
-                  <div key={index} className="flex items-center gap-2 w-[calc(50%-0.25rem)] min-w-[140px]">
-                    <div
-                      className={`w-5 h-5 rounded-full bg-gradient-to-br ${gradient} flex items-center justify-center flex-shrink-0`}
-                    >
-                      <Check className="w-3 h-3 text-white" />
-                    </div>
-                    <span className="text-[#475569] text-xs md:text-sm">{feature}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
+          <Icon className="w-7 h-7 text-white" />
         </div>
 
-        {/* Botón WhatsApp */}
-        <a
-          href={`https://wa.me/541173739055`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`mt-auto inline-flex items-center gap-3 bg-gradient-to-r ${gradient} text-white px-5 py-3 rounded-xl font-semibold hover:shadow-lg hover:scale-[1.02] transition-all duration-300 w-full justify-center`}
+        {/* Título */}
+        <h3 className="text-xl md:text-2xl font-bold text-[#0d233f] font-display mb-2">{title}</h3>
+
+        {/* Precio */}
+        <p className={`text-lg font-bold bg-gradient-to-r ${gradient} bg-clip-text text-transparent mb-3`}>{price}</p>
+
+        {/* Descripción corta */}
+        <p className="text-[#475569] text-sm mb-5 flex-grow">{description}</p>
+
+        {/* Botón Ver más */}
+        <Link
+          to={to}
+          className={`inline-flex items-center justify-center gap-2 bg-gradient-to-r ${gradient} text-white px-5 py-3 rounded-xl font-semibold hover:shadow-lg hover:scale-[1.02] transition-all duration-300 w-full`}
         >
-          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-          </svg>
-          Solicitar {title}
-        </a>
+          Ver más
+          <ArrowRight className="w-4 h-4" />
+        </Link>
       </div>
     </div>
   )
@@ -363,7 +324,6 @@ export default function DesarrolloWeb() {
       <section className="py-10 md:py-14 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-50/30 to-transparent"></div>
         <div className="max-w-6xl mx-auto px-4 relative z-10">
-          {/* Título con diseño decorativo */}
           <div className="text-center mb-8 md:mb-10" data-aos="fade-up">
             <span className="inline-block px-4 py-1 bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-sm font-semibold rounded-full mb-3">
               Paso a paso
@@ -376,9 +336,7 @@ export default function DesarrolloWeb() {
             </p>
           </div>
 
-          {/* Timeline con cards */}
           <div className="relative">
-            {/* Línea central (solo desktop) */}
             <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-cyan-500 via-purple-500 to-orange-500"></div>
 
             <div className="space-y-4 lg:space-y-0">
@@ -389,7 +347,6 @@ export default function DesarrolloWeb() {
                   data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
                   data-aos-delay={index * 100}
                 >
-                  {/* Card */}
                   <div className={`lg:w-[calc(50%-2rem)] ${index % 2 === 0 ? "lg:text-right" : "lg:text-left"}`}>
                     <div className="relative group">
                       <div
@@ -414,10 +371,8 @@ export default function DesarrolloWeb() {
                     </div>
                   </div>
 
-                  {/* Punto central (solo desktop) */}
                   <div className="hidden lg:flex w-4 h-4 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 shadow-lg relative z-10"></div>
 
-                  {/* Espaciador */}
                   <div className="hidden lg:block lg:w-[calc(50%-2rem)]"></div>
                 </div>
               ))}
@@ -428,155 +383,48 @@ export default function DesarrolloWeb() {
 
       <section className="py-10 md:py-14 bg-white">
         <div className="max-w-6xl mx-auto px-4">
-          {/* Título con diseño decorativo */}
           <div className="text-center mb-8 md:mb-10" data-aos="fade-up">
             <span className="inline-block px-4 py-1 bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-sm font-semibold rounded-full mb-3">
               Soluciones web
             </span>
             <h2 className="text-2xl md:text-3xl font-bold text-[#0d233f] font-display">Productos disponibles</h2>
             <p className="text-[#475569] mt-3 max-w-2xl mx-auto text-sm md:text-base">
-              Elegí la opción que mejor se adapte a tus necesidades. Todos nuestros productos incluyen soporte
-              personalizado.
+              Elegí la opción que mejor se adapte a tus necesidades.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 md:gap-6 items-start">
-            {/* Landing Page */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
             <div data-aos="fade-up" data-aos-delay="100">
               <ProductCard
                 title="Landing Page"
-                price="$70.000"
+                price="Desde $70.000"
+                description="Página web de una sola sección para presentar tu servicio o producto de forma clara."
                 icon={Globe}
-                features={landingFeatures}
                 gradient="from-cyan-500 to-blue-500"
-                whatsappMessage="Hola! Me interesa una Landing Page"
-              >
-                <p className="text-[#475569] text-sm mb-4">
-                  Una página web de una sola sección enfocada en presentar tu servicio o producto de forma clara y
-                  efectiva.
-                </p>
-
-                <div className="space-y-3">
-                  <div className="bg-gradient-to-r from-cyan-50 to-blue-50 rounded-xl p-3 border border-cyan-100">
-                    <h4 className="font-semibold text-[#0d233f] mb-1 text-sm">Opción Autogestionable: +$30.000</h4>
-                    <p className="text-[#475569] text-xs">
-                      Podés editar textos, imágenes y contenido sin depender del desarrollador.
-                    </p>
-                  </div>
-
-                  <div className="bg-gradient-to-r from-cyan-50 to-blue-50 rounded-xl p-3 border border-cyan-100">
-                    <h4 className="font-semibold text-[#0d233f] mb-1 text-sm">Pestañas extra: $20.000 c/u</h4>
-                    <p className="text-[#475569] text-xs mb-2">
-                      Secciones adicionales para organizar mejor tu contenido.
-                    </p>
-                    <div className="flex flex-wrap gap-1">
-                      {tabExamples.map((tab, index) => (
-                        <span
-                          key={index}
-                          className="bg-white text-[#0d233f] text-xs px-2 py-0.5 rounded-full border border-cyan-200 hover:bg-cyan-500 hover:text-white hover:border-cyan-500 transition-colors cursor-default"
-                        >
-                          {tab}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </ProductCard>
+                to="/servicios/landing-page"
+              />
             </div>
 
-            {/* E-learning */}
             <div data-aos="fade-up" data-aos-delay="200">
               <ProductCard
                 title="E-learning"
                 price="A consultar"
+                description="Plataforma propia para crear y vender cursos online bajo tu marca."
                 icon={GraduationCap}
-                features={elearningFeatures}
                 gradient="from-indigo-500 to-purple-500"
-                whatsappMessage="Hola! Me interesa una plataforma E-learning"
-              >
-                <p className="text-[#475569] text-sm mb-4">
-                  Plataforma donde podés crear, organizar y vender tus cursos online. Tus alumnos acceden a clases,
-                  videos y material desde cualquier dispositivo.
-                </p>
-
-                <div className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl p-3 border border-indigo-100">
-                  <h4 className="font-semibold text-[#0d233f] mb-2 text-sm">¿Por qué tu propia plataforma?</h4>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2">
-                      <div className="w-4 h-4 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <Check className="w-2.5 h-2.5 text-white" />
-                      </div>
-                      <span className="text-[#475569] text-xs">
-                        <strong className="text-[#0d233f]">Control total:</strong> Vos decidís precios, contenido y
-                        diseño.
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <div className="w-4 h-4 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <Check className="w-2.5 h-2.5 text-white" />
-                      </div>
-                      <span className="text-[#475569] text-xs">
-                        <strong className="text-[#0d233f]">Sin comisiones:</strong> No pagás porcentaje por cada venta.
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <div className="w-4 h-4 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <Check className="w-2.5 h-2.5 text-white" />
-                      </div>
-                      <span className="text-[#475569] text-xs">
-                        <strong className="text-[#0d233f]">Tu marca:</strong> Dominio y diseño propio.
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-              </ProductCard>
+                to="/servicios/e-learning"
+              />
             </div>
 
-            {/* E-commerce */}
             <div data-aos="fade-up" data-aos-delay="300">
               <ProductCard
                 title="E-commerce"
                 price="A consultar"
+                description="Tienda online completa para vender productos con pagos y envíos integrados."
                 icon={ShoppingCart}
-                features={ecommerceFeatures}
                 gradient="from-rose-500 to-orange-500"
-                whatsappMessage="Hola! Me interesa una tienda E-commerce"
-              >
-                <p className="text-[#475569] text-sm mb-4">
-                  Tienda online completa para vender tus productos. Sistema de carrito, pagos integrados y gestión de
-                  inventario.
-                </p>
-
-                <div className="bg-gradient-to-r from-rose-50 to-orange-50 rounded-xl p-3 border border-rose-100">
-                  <h4 className="font-semibold text-[#0d233f] mb-2 text-sm">Beneficios de tu tienda online</h4>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2">
-                      <div className="w-4 h-4 rounded-full bg-gradient-to-br from-rose-500 to-orange-500 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <Check className="w-2.5 h-2.5 text-white" />
-                      </div>
-                      <span className="text-[#475569] text-xs">
-                        <strong className="text-[#0d233f]">Ventas 24/7:</strong> Tu tienda siempre abierta.
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <div className="w-4 h-4 rounded-full bg-gradient-to-br from-rose-500 to-orange-500 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <Check className="w-2.5 h-2.5 text-white" />
-                      </div>
-                      <span className="text-[#475569] text-xs">
-                        <strong className="text-[#0d233f]">Alcance nacional:</strong> Vendé a todo el país.
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <div className="w-4 h-4 rounded-full bg-gradient-to-br from-rose-500 to-orange-500 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <Check className="w-2.5 h-2.5 text-white" />
-                      </div>
-                      <span className="text-[#475569] text-xs">
-                        <strong className="text-[#0d233f]">Automatización:</strong> Pagos y envíos integrados.
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-              </ProductCard>
+                to="/servicios/e-commerce"
+              />
             </div>
           </div>
         </div>

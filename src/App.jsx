@@ -7,6 +7,9 @@ import DesarrolloWeb from "./pages/DesarrolloWeb"
 import Portfolio from "./pages/Portfolio"
 import About from "./pages/About"
 import Contact from "./pages/Contact"
+import LandingPage from "./pages/servicios/LandingPage"
+import Elearning from "./pages/servicios/Elearning"
+import Ecommerce from "./pages/servicios/Ecommerce"
 
 function App() {
   return (
@@ -20,6 +23,9 @@ function App() {
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/nosotros" element={<About />} />
           <Route path="/contacto" element={<Contact />} />
+          <Route path="/servicios/landing-page" element={<LandingPage />} />
+          <Route path="/servicios/e-learning" element={<Elearning />} />
+          <Route path="/servicios/e-commerce" element={<Ecommerce />} />
         </Routes>
       </main>
       <Footer />

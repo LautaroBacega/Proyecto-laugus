@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { Send } from "lucide-react"
+import SEO from "../components/SEO"
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -11,6 +12,26 @@ export default function Contact() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
+
+  const contactSchema = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    name: "Contacto - Laugus",
+    description: "Contactanos para tu proyecto de desarrollo web. Respuesta en pocas horas.",
+    url: "https://laugus.com.ar/contacto",
+    mainEntity: {
+      "@type": "Organization",
+      name: "Laugus",
+      telephone: "+54-11-7373-9055",
+      email: "contacto@laugus.com.ar",
+      contactPoint: {
+        "@type": "ContactPoint",
+        telephone: "+54-11-7373-9055",
+        contactType: "customer service",
+        availableLanguage: ["Spanish"],
+      },
+    },
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -33,6 +54,14 @@ export default function Contact() {
 
   return (
     <div className="py-10">
+      <SEO
+        title="Contacto - Hablemos de tu Proyecto"
+        description="Contactanos para tu proyecto de desarrollo web. Te respondemos en pocas horas. WhatsApp, email o formulario de contacto."
+        keywords="contacto, presupuesto web, consulta desarrollo web, Argentina, WhatsApp"
+        url="https://laugus.com.ar/contacto"
+        schema={contactSchema}
+      />
+
       <div className="max-w-4xl mx-auto px-4">
         <div className="text-center mb-6">
           <div className="inline-block relative" data-aos="fade-down">

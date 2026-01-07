@@ -1,3 +1,5 @@
+import SEO from "../components/SEO"
+
 const projects = [
   {
     title: "Consultorio Médico",
@@ -38,8 +40,33 @@ const projects = [
 ]
 
 export default function Portfolio() {
+  const portfolioSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Portfolio - Laugus",
+    description: "Proyectos de desarrollo web realizados por Laugus. Landing pages, e-commerce y sistemas de turnos.",
+    url: "https://laugus.com.ar/portfolio",
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: projects.map((project, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: project.title,
+        description: project.description,
+      })),
+    },
+  }
+
   return (
     <div className="py-20">
+      <SEO
+        title="Portfolio - Proyectos de Desarrollo Web"
+        description="Conocé nuestros proyectos: landing pages, tiendas online y sistemas de turnos. Trabajos realizados para clientes en Argentina."
+        keywords="portfolio, proyectos web, landing page, e-commerce, sistema de turnos, trabajos realizados, desarrollo web Argentina"
+        url="https://laugus.com.ar/portfolio"
+        schema={portfolioSchema}
+      />
+
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-[#0d233f] mb-4" data-aos="fade-down">

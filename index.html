@@ -3,28 +3,131 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Laugus - Desarrollo Web</title>
-    <meta name="description" content="Desarrollo web para negocios que buscan presencia online clara y profesional." />
-    <link rel="icon" type="image/png" sizes="32x32" href="/public/images/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/public/images/favicon-16x16.png" />
-    <!-- Open Graph (WhatsApp / Instagram / Facebook) -->
-    <meta property="og:title" content="Laugus · Desarrollo web para negocios" />
-    <meta
-      property="og:description"
-      content="Creamos páginas web funcionales y a medida, con comunicación clara y procesos simples."
-    />
-    <meta property="og:type" content="website" /> 
-    <meta property="og:url" content="https://laugus.com.ar" />
+    
+    <!-- Primary Meta Tags mejorados -->
+    <title>Laugus | Desarrollo Web Profesional en Argentina</title>
+    <meta name="title" content="Laugus | Desarrollo Web Profesional en Argentina" />
+    <meta name="description" content="Agencia de desarrollo web en Argentina. Creamos landing pages, tiendas online y plataformas e-learning a medida. Soluciones web simples, rápidas y efectivas para tu negocio." />
+    <meta name="keywords" content="desarrollo web, páginas web, landing page, tienda online, e-commerce, e-learning, diseño web, Argentina, Buenos Aires, agencia web" />
+    <meta name="author" content="Laugus" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="Spanish" />
+    <meta name="revisit-after" content="7 days" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://laugus.com.ar" />
+    
+    <!-- Favicons corregidos (sin /public) -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="/images/og-image.png" />
+    
+    <!-- Theme color para móviles -->
+    <meta name="theme-color" content="#0d233f" />
+    <meta name="msapplication-TileColor" content="#0d233f" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://laugus.com.ar/" />
+    <meta property="og:title" content="Laugus | Desarrollo Web Profesional en Argentina" />
+    <meta property="og:description" content="Agencia de desarrollo web en Argentina. Creamos landing pages, tiendas online y plataformas e-learning a medida." />
     <meta property="og:image" content="https://laugus.com.ar/images/og-image.png" />
-    <!-- X -->
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:site_name" content="Laugus" />
+    
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Laugus · Desarrollo web para negocios" />
-    <meta
-      name="twitter:description"
-      content="Creamos páginas web funcionales y a medida, con comunicación clara y procesos simples."
-    />
-    <meta name="twitter:image" content="https://laugus.com.ar/og-image.png" />
-
+    <meta name="twitter:url" content="https://laugus.com.ar/" />
+    <meta name="twitter:title" content="Laugus | Desarrollo Web Profesional en Argentina" />
+    <meta name="twitter:description" content="Agencia de desarrollo web en Argentina. Creamos landing pages, tiendas online y plataformas e-learning a medida." />
+    <meta name="twitter:image" content="https://laugus.com.ar/images/og-image.png" />
+    
+    <!-- Preconnect para performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- JSON-LD Schema.org para Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Laugus",
+      "description": "Agencia de desarrollo web en Argentina. Creamos landing pages, tiendas online y plataformas e-learning a medida.",
+      "url": "https://laugus.com.ar",
+      "logo": "https://laugus.com.ar/images/laugusico.jpg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+54-11-7373-9055",
+        "contactType": "customer service",
+        "availableLanguage": ["Spanish"]
+      },
+      "sameAs": [],
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "AR"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Argentina"
+      },
+      "priceRange": "$$"
+    }
+    </script>
+    
+    <!-- JSON-LD Schema.org para LocalBusiness -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Laugus - Desarrollo Web",
+      "image": "https://laugus.com.ar/images/og-image.png",
+      "url": "https://laugus.com.ar",
+      "telephone": "+54-11-7373-9055",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "AR"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios de Desarrollo Web",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Landing Page",
+              "description": "Página web de una sola sección enfocada en presentar un servicio o producto"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "E-commerce",
+              "description": "Tienda online completa con catálogo de productos y carrito de compras"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Plataforma E-learning",
+              "description": "Plataforma para crear, organizar y vender cursos online"
+            }
+          }
+        ]
+      }
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>

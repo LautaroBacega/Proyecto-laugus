@@ -1,4 +1,5 @@
 import { Users, Target, Zap, Code } from "lucide-react"
+import SEO from "../components/SEO"
 
 const values = [
   {
@@ -22,8 +23,30 @@ const values = [
 ]
 
 export default function About() {
+  const aboutSchema = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    name: "Sobre Nosotros - Laugus",
+    description: "Conocé al equipo detrás de Laugus. Agencia de desarrollo web fundada por profesionales de sistemas.",
+    url: "https://laugus.com.ar/nosotros",
+    mainEntity: {
+      "@type": "Organization",
+      name: "Laugus",
+      foundingDate: "2024",
+      description: "Agencia de desarrollo web en Argentina",
+    },
+  }
+
   return (
     <div className="bg-[#f6fbff]">
+      <SEO
+        title="Sobre Nosotros - Conocé a Laugus"
+        description="Somos una agencia de desarrollo web fundada por profesionales de sistemas. Ofrecemos soluciones web prácticas, eficientes y accesibles para tu negocio."
+        keywords="sobre nosotros, equipo laugus, agencia desarrollo web, Argentina, quienes somos"
+        url="https://laugus.com.ar/nosotros"
+        schema={aboutSchema}
+      />
+
       {/* Values */}
       <section className="py-10 bg-white">
         <div className="max-w-6xl mx-auto px-4">

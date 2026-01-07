@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import { Globe, ShoppingCart, GraduationCap, ArrowRight, Star } from "lucide-react"
+import SEO from "../components/SEO"
 
 const services = [
   {
@@ -53,8 +54,29 @@ const testimonials = [
 ]
 
 export default function Home() {
+  const homeSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Laugus - Desarrollo Web Profesional",
+    description: "Agencia de desarrollo web en Argentina. Landing pages, tiendas online y plataformas e-learning.",
+    url: "https://laugus.com.ar",
+    mainEntity: {
+      "@type": "Organization",
+      name: "Laugus",
+      url: "https://laugus.com.ar",
+    },
+  }
+
   return (
     <div className="bg-[#fafbfc]">
+      <SEO
+        title="Laugus | Desarrollo Web Profesional en Argentina"
+        description="Agencia de desarrollo web en Argentina. Creamos landing pages, tiendas online y plataformas e-learning a medida. Soluciones web simples, rápidas y efectivas."
+        keywords="desarrollo web, landing page, tienda online, e-commerce, e-learning, diseño web, Argentina, Buenos Aires"
+        url="https://laugus.com.ar"
+        schema={homeSchema}
+      />
+
       <section className="bg-gradient-to-br from-[#0d233f] via-[#0d233f] to-[#1a3a5f] text-white min-h-screen flex items-center justify-center">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <h1

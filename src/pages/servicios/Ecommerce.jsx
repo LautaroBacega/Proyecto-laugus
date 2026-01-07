@@ -35,38 +35,6 @@ const benefits = [
 export default function Ecommerce() {
   return (
     <div className="bg-[#fafbfc]">
-      {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-[#0d233f] via-[#0d233f] to-[#1a3a5f]">
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-rose-500/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl"></div>
-        </div>
-
-        <div className="max-w-6xl mx-auto px-4 text-center py-8 relative z-10">
-          <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-rose-500 to-orange-500 flex items-center justify-center shadow-lg mx-auto mb-6 animate-zoom-in">
-            <ShoppingCart className="w-10 h-10 text-white" />
-          </div>
-          <h1
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-white animate-zoom-in"
-            style={{ fontFamily: "'Sora', sans-serif", animationDelay: "0.1s" }}
-          >
-            E-commerce
-          </h1>
-          <p
-            className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-rose-400 to-orange-400 bg-clip-text text-transparent mb-4 opacity-0 animate-zoom-in-up"
-            style={{ animationDelay: "0.2s" }}
-          >
-            Desde $375.000
-          </p>
-          <p
-            className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed opacity-0 animate-zoom-in-up"
-            style={{ fontFamily: "'Inter', sans-serif", animationDelay: "0.3s" }}
-          >
-            Tienda online completa para vender tus productos. Sistema de carrito, pagos integrados y gestión de
-            inventario.
-          </p>
-        </div>
-      </section>
 
       <BackButton gradient="from-rose-500 to-orange-500" />
 
@@ -74,9 +42,6 @@ export default function Ecommerce() {
       <section className="py-10 md:py-14 bg-[#fafbfc]">
         <div className="max-w-4xl mx-auto px-4">
           <div className="text-center mb-8" data-aos="fade-up">
-            <span className="inline-block px-4 py-1 bg-gradient-to-r from-rose-500 to-orange-500 text-white text-sm font-semibold rounded-full mb-3">
-              Incluido
-            </span>
             <h2 className="text-2xl md:text-3xl font-bold text-[#0d233f] font-display">¿Qué incluye?</h2>
           </div>
 
@@ -100,9 +65,6 @@ export default function Ecommerce() {
       <section className="py-10 md:py-14 bg-[#fafbfc]">
         <div className="max-w-4xl mx-auto px-4">
           <div className="text-center mb-8" data-aos="fade-up">
-            <span className="inline-block px-4 py-1 bg-gradient-to-r from-rose-500 to-orange-500 text-white text-sm font-semibold rounded-full mb-3">
-              Ventajas
-            </span>
             <h2 className="text-2xl md:text-3xl font-bold text-[#0d233f] font-display">
               Beneficios de tu tienda online
             </h2>

@@ -46,38 +46,6 @@ const useCases = [
 export default function Turnos() {
   return (
     <div className="bg-[#fafbfc]">
-      {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-[#0d233f] via-[#0d233f] to-[#1a3a5f]">
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl"></div>
-        </div>
-
-        <div className="max-w-6xl mx-auto px-4 text-center py-8 relative z-10">
-          <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center shadow-lg mx-auto mb-6 animate-zoom-in">
-            <Calendar className="w-10 h-10 text-white" />
-          </div>
-          <h1
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-white animate-zoom-in"
-            style={{ fontFamily: "'Sora', sans-serif", animationDelay: "0.1s" }}
-          >
-            Sistema de Turnos
-          </h1>
-          <p
-            className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent mb-4 opacity-0 animate-zoom-in-up"
-            style={{ animationDelay: "0.2s" }}
-          >
-            Desde $160.000
-          </p>
-          <p
-            className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed opacity-0 animate-zoom-in-up"
-            style={{ fontFamily: "'Inter', sans-serif", animationDelay: "0.3s" }}
-          >
-            Página web con sistema de reservas online. Tus clientes sacan turnos y vos gestionás tu agenda desde un
-            panel.
-          </p>
-        </div>
-      </section>
 
       <BackButton gradient="from-emerald-500 to-teal-500" />
 
@@ -85,9 +53,6 @@ export default function Turnos() {
       <section className="py-10 md:py-14 bg-[#fafbfc]">
         <div className="max-w-4xl mx-auto px-4">
           <div className="text-center mb-8" data-aos="fade-up">
-            <span className="inline-block px-4 py-1 bg-gradient-to-r from-emerald-500 to-teal-500 text-white text-sm font-semibold rounded-full mb-3">
-              Incluido
-            </span>
             <h2 className="text-2xl md:text-3xl font-bold text-[#0d233f] font-display">¿Qué incluye?</h2>
           </div>
 
@@ -111,9 +76,6 @@ export default function Turnos() {
       <section className="py-10 md:py-14 bg-[#fafbfc]">
         <div className="max-w-4xl mx-auto px-4">
           <div className="text-center mb-8" data-aos="fade-up">
-            <span className="inline-block px-4 py-1 bg-gradient-to-r from-emerald-500 to-teal-500 text-white text-sm font-semibold rounded-full mb-3">
-              Ideal para
-            </span>
             <h2 className="text-2xl md:text-3xl font-bold text-[#0d233f] font-display">¿Quiénes lo usan?</h2>
           </div>
 
@@ -134,9 +96,6 @@ export default function Turnos() {
       <section className="py-10 md:py-14 bg-[#fafbfc]">
         <div className="max-w-4xl mx-auto px-4">
           <div className="text-center mb-8" data-aos="fade-up">
-            <span className="inline-block px-4 py-1 bg-gradient-to-r from-emerald-500 to-teal-500 text-white text-sm font-semibold rounded-full mb-3">
-              Ventajas
-            </span>
             <h2 className="text-2xl md:text-3xl font-bold text-[#0d233f] font-display">
               Beneficios del sistema de turnos
             </h2>

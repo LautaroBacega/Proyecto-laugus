@@ -61,37 +61,6 @@ const landingVersions = [
 export default function LandingPage() {
   return (
     <div className="bg-[#fafbfc]">
-      {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-[#0d233f] via-[#0d233f] to-[#1a3a5f]">
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
-        </div>
-
-        <div className="max-w-6xl mx-auto px-4 text-center py-8 relative z-10">
-          <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center shadow-lg mx-auto mb-6 animate-zoom-in">
-            <Globe className="w-10 h-10 text-white" />
-          </div>
-          <h1
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-white animate-zoom-in"
-            style={{ fontFamily: "'Sora', sans-serif", animationDelay: "0.1s" }}
-          >
-            Diseño web profesional
-          </h1>
-          <p
-            className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-4 opacity-0 animate-zoom-in-up"
-            style={{ animationDelay: "0.2s" }}
-          >
-            Desde $70.000
-          </p>
-          <p
-            className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed opacity-0 animate-zoom-in-up"
-            style={{ fontFamily: "'Inter', sans-serif", animationDelay: "0.3s" }}
-          >
-            Elegí la versión que mejor se adapte a tus necesidades.
-          </p>
-        </div>
-      </section>
 
       <BackButton gradient="from-cyan-500 to-blue-500" />
 

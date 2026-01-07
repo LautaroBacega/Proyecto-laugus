@@ -244,142 +244,9 @@ function ProductCard({ title, price, description, icon: Icon, gradient, to }) {
 export default function DesarrolloWeb() {
   return (
     <div className="bg-[#fafbfc]">
-      <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-[#0d233f] via-[#0d233f] to-[#1a3a5f]">
-        {/* Elementos decorativos */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
-        </div>
-
-        <div className="max-w-6xl mx-auto px-4 text-center py-8 relative z-10">
-          <h1
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-white animate-zoom-in"
-            style={{ fontFamily: "'Sora', sans-serif", animationDelay: "0.1s" }}
-          >
-            Diseño Web
-          </h1>
-          <p
-            className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed opacity-0 animate-zoom-in-up"
-            style={{ fontFamily: "'Inter', sans-serif", animationDelay: "0.3s" }}
-          >
-            Creamos páginas web profesionales que impulsan tu negocio y te conectan con más clientes.
-          </p>
-        </div>
-      </section>
-
-      <section id="servicios" className="py-10 md:py-14">
-        <div className="max-w-6xl mx-auto px-4 space-y-4">
-          <div data-aos="fade-up">
-            <CollapsibleSection title="¿Quienes necesitan una página web?" gradient="from-cyan-500 to-blue-500">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {whoNeedsWebsite.map((item, index) => (
-                  <div
-                    key={index}
-                    className="relative group/item p-4 rounded-xl bg-gradient-to-br from-gray-50 to-white border border-gray-100 hover:shadow-lg transition-all duration-300"
-                  >
-                    <div
-                      className={`w-10 h-10 rounded-lg bg-gradient-to-br ${item.color} flex items-center justify-center mb-3 shadow-md group-hover/item:scale-110 transition-transform duration-300`}
-                    >
-                      <item.icon className="w-5 h-5 text-white" />
-                    </div>
-                    <h3 className="font-bold text-[#0d233f] mb-1 font-display">{item.title}</h3>
-                    <p className="text-[#475569] text-sm">{item.description}</p>
-                  </div>
-                ))}
-              </div>
-            </CollapsibleSection>
-          </div>
-
-          <div data-aos="fade-up" data-aos-delay="100">
-            <CollapsibleSection title="¿Por qué necesitás una página web?" gradient="from-blue-500 to-indigo-500">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {whyHaveWebsite.map((item, index) => (
-                  <div
-                    key={index}
-                    className="relative overflow-hidden p-4 rounded-xl bg-white border border-gray-100 hover:shadow-lg transition-all duration-300 group/item"
-                  >
-                    <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${item.gradient}`}></div>
-                    <div
-                      className={`w-10 h-10 rounded-lg bg-gradient-to-br ${item.gradient} flex items-center justify-center mb-3 shadow-md group-hover/item:scale-110 transition-transform duration-300`}
-                    >
-                      <item.icon className="w-5 h-5 text-white" />
-                    </div>
-                    <h3 className="font-bold text-[#0d233f] mb-1 font-display">{item.title}</h3>
-                    <p className="text-[#475569] text-sm">{item.description}</p>
-                  </div>
-                ))}
-              </div>
-            </CollapsibleSection>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-10 md:py-14 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-50/30 to-transparent"></div>
-        <div className="max-w-6xl mx-auto px-4 relative z-10">
-          <div className="text-center mb-8 md:mb-10" data-aos="fade-up">
-            <span className="inline-block px-4 py-1 bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-sm font-semibold rounded-full mb-3">
-              Paso a paso
-            </span>
-            <h2 className="text-2xl md:text-3xl font-bold text-[#0d233f] font-display">
-              Nuestro proceso de desarrollo
-            </h2>
-            <p className="text-[#475569] mt-3 max-w-2xl mx-auto text-sm md:text-base">
-              Un proceso claro y ordenado para que tu proyecto avance sin complicaciones.
-            </p>
-          </div>
-
-          <div className="relative">
-            <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-cyan-500 via-purple-500 to-orange-500"></div>
-
-            <div className="space-y-4 lg:space-y-0">
-              {processSteps.map((step, index) => (
-                <div
-                  key={index}
-                  className={`lg:flex lg:items-center lg:gap-8 ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"}`}
-                  data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
-                  data-aos-delay={index * 100}
-                >
-                  <div className={`lg:w-[calc(50%-2rem)] ${index % 2 === 0 ? "lg:text-right" : "lg:text-left"}`}>
-                    <div className="relative group">
-                      <div
-                        className={`absolute -inset-[1px] bg-gradient-to-r ${step.color} rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm`}
-                      ></div>
-                      <div className="relative bg-white p-4 md:p-5 rounded-2xl shadow-lg border border-gray-100">
-                        <div className={`flex items-center gap-3 mb-3 ${index % 2 === 0 ? "lg:flex-row-reverse" : ""}`}>
-                          <div
-                            className={`w-10 h-10 rounded-xl bg-gradient-to-br ${step.color} flex items-center justify-center shadow-md`}
-                          >
-                            <step.icon className="w-5 h-5 text-white" />
-                          </div>
-                          <div
-                            className={`w-8 h-8 rounded-full bg-gradient-to-br ${step.color} flex items-center justify-center text-white font-bold text-sm shadow-md`}
-                          >
-                            {index + 1}
-                          </div>
-                        </div>
-                        <h3 className="font-bold text-[#0d233f] mb-1 font-display">{step.title}</h3>
-                        <p className="text-[#475569] text-sm">{step.description}</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="hidden lg:flex w-4 h-4 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 shadow-lg relative z-10"></div>
-
-                  <div className="hidden lg:block lg:w-[calc(50%-2rem)]"></div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="py-10 md:py-14 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-8 md:mb-10" data-aos="fade-up">
-            <span className="inline-block px-4 py-1 bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-sm font-semibold rounded-full mb-3">
-              Soluciones web
-            </span>
             <h2 className="text-2xl md:text-3xl font-bold text-[#0d233f] font-display">Productos disponibles</h2>
             <p className="text-[#475569] mt-3 max-w-2xl mx-auto text-sm md:text-base">
               Elegí la opción que mejor se adapte a tus necesidades.
@@ -440,6 +307,109 @@ export default function DesarrolloWeb() {
                 gradient="from-rose-500 to-pink-500"
                 to="/servicios/e-commerce"
               />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="servicios" className="py-10 md:py-14">
+        <div className="max-w-6xl mx-auto px-4 space-y-4">
+          <div data-aos="fade-up">
+            <CollapsibleSection title="¿Quienes necesitan una página web?" gradient="from-cyan-500 to-blue-500">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {whoNeedsWebsite.map((item, index) => (
+                  <div
+                    key={index}
+                    className="relative group/item p-4 rounded-xl bg-gradient-to-br from-gray-50 to-white border border-gray-100 hover:shadow-lg transition-all duration-300"
+                  >
+                    <div
+                      className={`w-10 h-10 rounded-lg bg-gradient-to-br ${item.color} flex items-center justify-center mb-3 shadow-md group-hover/item:scale-110 transition-transform duration-300`}
+                    >
+                      <item.icon className="w-5 h-5 text-white" />
+                    </div>
+                    <h3 className="font-bold text-[#0d233f] mb-1 font-display">{item.title}</h3>
+                    <p className="text-[#475569] text-sm">{item.description}</p>
+                  </div>
+                ))}
+              </div>
+            </CollapsibleSection>
+          </div>
+
+          <div data-aos="fade-up" data-aos-delay="100">
+            <CollapsibleSection title="¿Por qué necesitás una página web?" gradient="from-blue-500 to-indigo-500">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {whyHaveWebsite.map((item, index) => (
+                  <div
+                    key={index}
+                    className="relative overflow-hidden p-4 rounded-xl bg-white border border-gray-100 hover:shadow-lg transition-all duration-300 group/item"
+                  >
+                    <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${item.gradient}`}></div>
+                    <div
+                      className={`w-10 h-10 rounded-lg bg-gradient-to-br ${item.gradient} flex items-center justify-center mb-3 shadow-md group-hover/item:scale-110 transition-transform duration-300`}
+                    >
+                      <item.icon className="w-5 h-5 text-white" />
+                    </div>
+                    <h3 className="font-bold text-[#0d233f] mb-1 font-display">{item.title}</h3>
+                    <p className="text-[#475569] text-sm">{item.description}</p>
+                  </div>
+                ))}
+              </div>
+            </CollapsibleSection>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-10 md:py-14 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-50/30 to-transparent"></div>
+        <div className="max-w-6xl mx-auto px-4 relative z-10">
+          <div className="text-center mb-8 md:mb-10" data-aos="fade-up">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#0d233f] font-display">
+              Nuestro proceso de desarrollo
+            </h2>
+            <p className="text-[#475569] mt-3 max-w-2xl mx-auto text-sm md:text-base">
+              Un proceso claro y ordenado para que tu proyecto avance sin complicaciones.
+            </p>
+          </div>
+
+          <div className="relative">
+            <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-cyan-500 via-purple-500 to-orange-500"></div>
+
+            <div className="space-y-4 lg:space-y-0">
+              {processSteps.map((step, index) => (
+                <div
+                  key={index}
+                  className={`lg:flex lg:items-center lg:gap-8 ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"}`}
+                  data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
+                  data-aos-delay={index * 100}
+                >
+                  <div className={`lg:w-[calc(50%-2rem)] ${index % 2 === 0 ? "lg:text-right" : "lg:text-left"}`}>
+                    <div className="relative group">
+                      <div
+                        className={`absolute -inset-[1px] bg-gradient-to-r ${step.color} rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm`}
+                      ></div>
+                      <div className="relative bg-white p-4 md:p-5 rounded-2xl shadow-lg border border-gray-100">
+                        <div className={`flex items-center gap-3 mb-3 ${index % 2 === 0 ? "lg:flex-row-reverse" : ""}`}>
+                          <div
+                            className={`w-10 h-10 rounded-xl bg-gradient-to-br ${step.color} flex items-center justify-center shadow-md`}
+                          >
+                            <step.icon className="w-5 h-5 text-white" />
+                          </div>
+                          <div
+                            className={`w-8 h-8 rounded-full bg-gradient-to-br ${step.color} flex items-center justify-center text-white font-bold text-sm shadow-md`}
+                          >
+                            {index + 1}
+                          </div>
+                        </div>
+                        <h3 className="font-bold text-[#0d233f] mb-1 font-display">{step.title}</h3>
+                        <p className="text-[#475569] text-sm">{step.description}</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="hidden lg:flex w-4 h-4 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 shadow-lg relative z-10"></div>
+
+                  <div className="hidden lg:block lg:w-[calc(50%-2rem)]"></div>
+                </div>
+              ))}
             </div>
           </div>
         </div>

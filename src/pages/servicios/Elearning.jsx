@@ -1,6 +1,7 @@
 "use client"
 
 import { Check, GraduationCap, Shield, Zap, Users } from "lucide-react"
+import BackButton from "../../components/BackButton"
 
 const elearningFeatures = [
   "Plataforma autogestionable",
@@ -34,6 +35,8 @@ const benefits = [
 export default function Elearning() {
   return (
     <div className="bg-[#fafbfc]">
+      <BackButton />
+
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-[#0d233f] via-[#0d233f] to-[#1a3a5f]">
         <div className="absolute inset-0 overflow-hidden">

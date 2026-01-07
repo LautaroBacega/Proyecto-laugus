@@ -10,6 +10,8 @@ import Contact from "./pages/Contact"
 import LandingPage from "./pages/servicios/LandingPage"
 import Elearning from "./pages/servicios/Elearning"
 import Ecommerce from "./pages/servicios/Ecommerce"
+import Turnos from "./pages/servicios/Turnos"
+import ControlStock from "./pages/servicios/ControlStock"
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
           <Route path="/servicios/landing-page" element={<LandingPage />} />
           <Route path="/servicios/e-learning" element={<Elearning />} />
           <Route path="/servicios/e-commerce" element={<Ecommerce />} />
+          <Route path="/servicios/turnos" element={<Turnos />} />
+          <Route path="/servicios/control-stock" element={<ControlStock />} />
         </Routes>
       </main>
       <Footer />

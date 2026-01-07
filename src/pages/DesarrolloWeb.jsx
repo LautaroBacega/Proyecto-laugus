@@ -256,7 +256,7 @@ export default function DesarrolloWeb() {
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-white animate-zoom-in"
             style={{ fontFamily: "'Sora', sans-serif", animationDelay: "0.1s" }}
           >
-            Desarrollo Web
+            Diseño Web
           </h1>
           <p
             className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed opacity-0 animate-zoom-in-up"

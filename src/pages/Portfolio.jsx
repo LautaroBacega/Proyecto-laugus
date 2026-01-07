@@ -76,7 +76,7 @@ export default function Portfolio() {
                 className="text-4xl md:text-4xl font-bold text-[#0d233f] mb-4 relative inline-block"
                 style={{ fontFamily: "var(--font-display)" }}
               >
-                Portfolio
+                Clientes
                 <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#06b6d4] to-transparent rounded-full"></div>
                 
               </h2>

@@ -17,8 +17,9 @@ import {
   Link2,
   Server,
   Shield,
+  ArrowLeft,
 } from "lucide-react"
-import BackButton from "../../../components/BackButton"
+import { useNavigate } from "react-router-dom"
 
 const benefits = [
   {
@@ -67,30 +68,19 @@ const designFeatures = [
 
 const additionals = [
   {
-    title: "Hosting Básico",
+    title: "Hosting",
     icon: Server,
-    details: [
-      "1 sitio web",
-      "30GB de espacio en disco",
-      "Tráfico mensual ilimitado*",
-      "Cuentas de correo ilimitadas*",
-      "Correo corporativo",
-      "Base de datos y FTP",
-      "Soporte básico 24/7 vía ticket",
-    ],
-    price: "Primer año gratis – luego AR$ 85.000 / año",
+    description: "Primer año incluido",
   },
   {
-    title: "Dominio .com",
+    title: "Dominio .com.ar",
     icon: Globe,
-    details: [],
-    price: "Primer año gratis – luego AR$ 60.000 / año",
+    description: "Primer año incluido",
   },
   {
-    title: "Certificado SSL (sitio seguro)",
+    title: "Certificado SSL",
     icon: Shield,
-    details: [],
-    price: "Primer año gratis – luego AR$ 45.000 / año",
+    description: "Primer año incluido",
   },
 ]
 
@@ -148,15 +138,25 @@ function FAQItem({ question, answer, isOpen, onClick }) {
 
 export default function LandingBasica() {
   const [openFAQ, setOpenFAQ] = useState(null)
+  const navigate = useNavigate()
 
   return (
     <div className="bg-[#fafbfc]">
+      <div className="sticky top-[72px] z-40 bg-[#fafbfc] py-3 border-b border-gray-100">
+        <div className="max-w-6xl mx-auto px-4">
+          <button
+            onClick={() => navigate(-1)}
+            className="flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-5 py-2.5 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group"
+          >
+            <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform duration-300" />
+            <span className="font-medium">Volver</span>
+          </button>
+        </div>
+      </div>
 
-      <BackButton gradient="from-cyan-500 to-blue-500" />
-
-      {/* Benefits Section - New section "Qué vas a lograr" */}
-      <section className="py-10 md:py-14 bg-[#fafbfc]">
-        <div className="max-w-4xl mx-auto px-4">
+      {/* Benefits Section - Two columns */}
+      <section className="py-10 md:py-14">
+        <div className="max-w-5xl mx-auto px-4">
           <div className="text-center mb-8" data-aos="fade-up">
             <h2 className="text-2xl md:text-3xl font-bold text-[#0d233f] font-display">
               Con tu landing personalizada vas a poder:
@@ -167,7 +167,7 @@ export default function LandingBasica() {
             {benefits.map((benefit, index) => (
               <div key={index} className="relative group">
                 <div className="absolute -inset-[1px] bg-gradient-to-r from-cyan-500 to-blue-500 rounded-2xl opacity-50 group-hover:opacity-100 transition-opacity duration-500 blur-sm"></div>
-                <div className="relative bg-[#fafbfc] rounded-2xl p-5 border border-gray-100 h-full flex items-start gap-4">
+                <div className="relative bg-white rounded-2xl p-5 border border-gray-100 h-full flex items-start gap-4">
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center shadow-lg flex-shrink-0">
                     <benefit.icon className="w-6 h-6 text-white" />
                   </div>
@@ -182,81 +182,69 @@ export default function LandingBasica() {
         </div>
       </section>
 
-      {/* Target Audience Section - "Para quién es" */}
-      <section className="py-10 md:py-14 bg-white">
-        <div className="max-w-4xl mx-auto px-4">
+      <section className="py-10 md:py-14">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Target Audience Column */}
+            <div data-aos="fade-right">
+              <h2 className="text-2xl md:text-3xl font-bold text-[#0d233f] font-display mb-6 text-center lg:text-left">
+                ¿Para quién es este servicio?
+              </h2>
+              <div className="space-y-3">
+                {targetAudience.map((item, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center gap-4 p-4 bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300"
+                  >
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center flex-shrink-0">
+                      <item.icon className="w-5 h-5 text-white" />
+                    </div>
+                    <span className="text-[#0d233f] font-medium text-sm">{item.text}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Design Features Column */}
+            <div data-aos="fade-left">
+              <h2 className="text-2xl md:text-3xl font-bold text-[#0d233f] font-display mb-6 text-center lg:text-left">
+                ¿Qué incluye el diseño?
+              </h2>
+              <div className="space-y-3">
+                {designFeatures.map((feature, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center gap-3 p-4 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300"
+                  >
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center flex-shrink-0">
+                      <feature.icon className="w-5 h-5 text-white" />
+                    </div>
+                    <span className="text-[#0d233f] font-medium text-sm">{feature.text}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-10 md:py-14">
+        <div className="max-w-5xl mx-auto px-4">
           <div className="text-center mb-8" data-aos="fade-up">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#0d233f] font-display">
-              ¿Para quién es este servicio?
-            </h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-[#0d233f] font-display">Incluye el primer año</h2>
           </div>
 
-          <div className="space-y-4" data-aos="fade-up" data-aos-delay="100">
-            {targetAudience.map((item, index) => (
+          <div className="flex flex-wrap justify-center gap-4" data-aos="fade-up" data-aos-delay="100">
+            {additionals.map((item, index) => (
               <div
                 key={index}
-                className="flex items-center gap-4 p-5 bg-gradient-to-r from-cyan-50 to-blue-50 rounded-xl border border-cyan-100 hover:shadow-md transition-all duration-300"
+                className="flex items-center gap-3 bg-white rounded-full px-6 py-3 shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300"
               >
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center">
                   <item.icon className="w-5 h-5 text-white" />
                 </div>
-                <span className="text-[#0d233f] font-medium">{item.text}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Design Features Section - "Qué incluye el diseño" */}
-      <section className="py-10 md:py-14 bg-[#fafbfc]">
-        <div className="max-w-4xl mx-auto px-4">
-          <div className="text-center mb-8" data-aos="fade-up">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#0d233f] font-display">¿Qué incluye el diseño?</h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4" data-aos="fade-up" data-aos-delay="100">
-            {designFeatures.map((feature, index) => (
-              <div
-                key={index}
-                className="flex items-center gap-3 p-4 bg-white rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300"
-              >
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center flex-shrink-0">
-                  <feature.icon className="w-5 h-5 text-white" />
-                </div>
-                <span className="text-[#0d233f] font-medium">{feature.text}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Additionals Section - "Adicionales y detalles" */}
-      <section className="py-10 md:py-14 bg-white">
-        <div className="max-w-4xl mx-auto px-4">
-          <div className="text-center mb-8" data-aos="fade-up">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#0d233f] font-display">Adicionales y detalles</h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4" data-aos="fade-up" data-aos-delay="100">
-            {additionals.map((item, index) => (
-              <div key={index} className="relative group h-full">
-                <div className="absolute -inset-[1px] bg-gradient-to-r from-cyan-500 to-blue-500 rounded-2xl opacity-50 group-hover:opacity-100 transition-opacity duration-500 blur-sm"></div>
-                <div className="relative bg-white rounded-2xl p-5 border border-gray-100 h-full flex flex-col">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center shadow-lg mb-4">
-                    <item.icon className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="font-bold text-[#0d233f] text-lg font-display mb-3">{item.title}</h3>
-                  {item.details.length > 0 && (
-                    <ul className="space-y-1 mb-4 flex-grow">
-                      {item.details.map((detail, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-sm text-[#475569]">
-                          <Check className="w-4 h-4 text-cyan-500 flex-shrink-0 mt-0.5" />
-                          <span>{detail}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                  <p className="text-sm font-semibold text-cyan-600 mt-auto">{item.price}</p>
+                <div>
+                  <span className="font-semibold text-[#0d233f]">{item.title}</span>
                 </div>
               </div>
             ))}
@@ -264,8 +252,8 @@ export default function LandingBasica() {
         </div>
       </section>
 
-      {/* Payment Info Section - "Aclaración de pago" */}
-      <section className="py-10 md:py-14 bg-[#fafbfc]">
+      {/* Payment Info Section */}
+      <section className="py-10 md:py-14">
         <div className="max-w-3xl mx-auto px-4" data-aos="fade-up">
           <div className="bg-gradient-to-r from-cyan-500 to-blue-500 rounded-2xl p-8 text-center text-white shadow-xl">
             <h3 className="text-xl md:text-2xl font-bold mb-6">Pagás una vez, el sitio es tuyo para siempre</h3>
@@ -287,14 +275,13 @@ export default function LandingBasica() {
         </div>
       </section>
 
-      {/* FAQ Section - "Preguntas Frecuentes" */}
-      <section className="py-10 md:py-14 bg-white">
-        <div className="max-w-3xl mx-auto px-4">
+      <section className="py-10 md:py-14">
+        <div className="max-w-5xl mx-auto px-4">
           <div className="text-center mb-8" data-aos="fade-up">
             <h2 className="text-2xl md:text-3xl font-bold text-[#0d233f] font-display">Preguntas Frecuentes</h2>
           </div>
 
-          <div className="space-y-3" data-aos="fade-up" data-aos-delay="100">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3" data-aos="fade-up" data-aos-delay="100">
             {faqs.map((faq, index) => (
               <FAQItem
                 key={index}
@@ -308,8 +295,8 @@ export default function LandingBasica() {
         </div>
       </section>
 
-      {/* CTA Section - "¿Arrancamos?" */}
-      <section className="py-10 md:py-14 bg-[#fafbfc]">
+      {/* CTA Section */}
+      <section className="py-10 md:py-14">
         <div className="max-w-4xl mx-auto px-4 text-center" data-aos="fade-up">
           <h2 className="text-2xl md:text-3xl font-bold text-[#0d233f] font-display mb-4">¿Arrancamos?</h2>
           <p className="text-[#475569] mb-6 max-w-xl mx-auto">

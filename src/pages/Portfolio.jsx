@@ -4,35 +4,42 @@ const projects = [
   {
     title: "Accesorios Bmx",
     category: "Ecommerce",
-    description: "Una tienda online completa para productos BMX con carrito de compras, sistema de pagos, autenticacion y gestión de inventario.",
+    description:
+      "Una tienda online completa para productos BMX con carrito de compras, sistema de pagos, autenticacion y gestión de inventario.",
     image: "/tiendabmxIMG3.png",
+    url: "https://accesoriosbmx.onrender.com/",
   },
   {
     title: "ABBMX Frestyle",
     category: "Landing Page",
     description: "Sitio web para una escuela de BMX Freestyle con información de cursos y instructores.",
     image: "/abbmxIMG1.png",
+    url: "https://abbmxfreestyle.netlify.app/",
   },
   {
     title: "LauchaBmxStore",
     category: "Tienda Autogestionable",
-    description: "Tienda online estática desarrollada para Laucha BMX Store. El sitio público muestra un catálogo de productos y carrito de compras. Localmente incluye un panel de administración para gestionar productos (CRUD).",
+    description:
+      "Tienda online estática desarrollada para Laucha BMX Store. El sitio público muestra un catálogo de productos y carrito de compras. Localmente incluye un panel de administración para gestionar productos (CRUD).",
     image: "/LauchaBmxStore.png",
+    url: "https://lauchabmxstore.netlify.app/",
   },
   {
     title: "Somos Bahía",
     category: "Sitio con Sistema de Turnos",
-    description: "Landing page moderna y responsive para el movimiento político Somos Bahía, con propuestas, valores, candidatos e integración de participación ciudadana.",
+    description:
+      "Landing page moderna y responsive para el movimiento político Somos Bahía, con propuestas, valores, candidatos e integración de participación ciudadana.",
     image: "/somosBahia1.png",
+    url: "https://somosbahia.netlify.app/",
   },
   {
     title: "SilverFitness",
     category: "Landing Page",
     description: "Landing page corporativa con servicios y casos de éxito.",
     image: "/SilverFitness1.png",
+    url: "https://silverfitness1.netlify.app/",
   },
 ]
-
 
 export default function Portfolio() {
   const portfolioSchema = {
@@ -74,9 +81,12 @@ export default function Portfolio() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <div
+            <a
               key={index}
-              className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 card-hover group"
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 card-hover group cursor-pointer block"
               data-aos="fade-up"
               data-aos-delay={100 + index * 100}
             >
@@ -94,7 +104,7 @@ export default function Portfolio() {
                 <h3 className="text-xl font-semibold text-[#0d233f] mt-3 mb-2 hover-lift">{project.title}</h3>
                 <p className="text-[#475569] text-sm">{project.description}</p>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>

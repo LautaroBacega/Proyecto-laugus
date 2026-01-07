@@ -12,6 +12,9 @@ import Elearning from "./pages/servicios/Elearning"
 import Ecommerce from "./pages/servicios/Ecommerce"
 import Turnos from "./pages/servicios/Turnos"
 import ControlStock from "./pages/servicios/ControlStock"
+import LandingBasica from "./pages/servicios/landing/LandingBasica"
+import LandingAutogestionable from "./pages/servicios/landing/LandingAutogestionable"
+import LandingPestanas from "./pages/servicios/landing/LandingPestanas"
 
 function App() {
   return (
@@ -26,6 +29,9 @@ function App() {
           <Route path="/nosotros" element={<About />} />
           <Route path="/contacto" element={<Contact />} />
           <Route path="/servicios/landing-page" element={<LandingPage />} />
+          <Route path="/servicios/landing-page/basica" element={<LandingBasica />} />
+          <Route path="/servicios/landing-page/autogestionable" element={<LandingAutogestionable />} />
+          <Route path="/servicios/landing-page/pestanas" element={<LandingPestanas />} />
           <Route path="/servicios/e-learning" element={<Elearning />} />
           <Route path="/servicios/e-commerce" element={<Ecommerce />} />
           <Route path="/servicios/turnos" element={<Turnos />} />

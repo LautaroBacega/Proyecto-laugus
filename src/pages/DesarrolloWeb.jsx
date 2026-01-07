@@ -389,7 +389,7 @@ export default function DesarrolloWeb() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
             <div data-aos="fade-up" data-aos-delay="100">
               <ProductCard
-                title="Landing Page"
+                title="Diseño web profesional"
                 price="Desde $70.000"
                 description="Página web para presentar tu servicio o producto. 3 versiones disponibles: Base, Autogestionable y con Pestañas extra."
                 icon={Globe}
@@ -401,7 +401,7 @@ export default function DesarrolloWeb() {
             <div data-aos="fade-up" data-aos-delay="200">
               <ProductCard
                 title="Sistema de Turnos"
-                price="A consultar"
+                price="Desde $160.000"
                 description="Página con sistema de reservas online. Ideal para médicos, peluquerías, consultorios y más."
                 icon={Calendar}
                 gradient="from-emerald-500 to-teal-500"
@@ -412,7 +412,7 @@ export default function DesarrolloWeb() {
             <div data-aos="fade-up" data-aos-delay="300">
               <ProductCard
                 title="Control de Stock"
-                price="A consultar"
+                price="Desde $200.000"
                 description="Sistema web para gestionar tu inventario. Controlá entradas, salidas y recibí alertas."
                 icon={Package}
                 gradient="from-amber-500 to-orange-500"
@@ -423,7 +423,7 @@ export default function DesarrolloWeb() {
             <div data-aos="fade-up" data-aos-delay="400">
               <ProductCard
                 title="E-learning"
-                price="A consultar"
+                price="Desde $200.000"
                 description="Plataforma propia para crear y vender cursos online bajo tu marca."
                 icon={GraduationCap}
                 gradient="from-indigo-500 to-purple-500"
@@ -434,7 +434,7 @@ export default function DesarrolloWeb() {
             <div data-aos="fade-up" data-aos-delay="500">
               <ProductCard
                 title="E-commerce"
-                price="A consultar"
+                price="Desde $375.000"
                 description="Tienda online completa para vender productos con pagos y envíos integrados."
                 icon={ShoppingCart}
                 gradient="from-rose-500 to-pink-500"

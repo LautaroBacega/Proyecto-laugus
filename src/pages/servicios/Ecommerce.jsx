@@ -35,8 +35,6 @@ const benefits = [
 export default function Ecommerce() {
   return (
     <div className="bg-[#fafbfc]">
-      <BackButton />
-
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-[#0d233f] via-[#0d233f] to-[#1a3a5f]">
         <div className="absolute inset-0 overflow-hidden">
@@ -58,7 +56,7 @@ export default function Ecommerce() {
             className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-rose-400 to-orange-400 bg-clip-text text-transparent mb-4 opacity-0 animate-zoom-in-up"
             style={{ animationDelay: "0.2s" }}
           >
-            A consultar
+            Desde $375.000
           </p>
           <p
             className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed opacity-0 animate-zoom-in-up"
@@ -70,8 +68,10 @@ export default function Ecommerce() {
         </div>
       </section>
 
+      <BackButton gradient="from-rose-500 to-orange-500" />
+
       {/* Features Section */}
-      <section className="py-10 md:py-14">
+      <section className="py-10 md:py-14 bg-[#fafbfc]">
         <div className="max-w-4xl mx-auto px-4">
           <div className="text-center mb-8" data-aos="fade-up">
             <span className="inline-block px-4 py-1 bg-gradient-to-r from-rose-500 to-orange-500 text-white text-sm font-semibold rounded-full mb-3">
@@ -84,7 +84,7 @@ export default function Ecommerce() {
             {ecommerceFeatures.map((feature, index) => (
               <div
                 key={index}
-                className="flex items-center gap-3 p-4 bg-white rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300"
+                className="flex items-center gap-3 p-4 bg-[#fafbfc] rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300"
               >
                 <div className="w-8 h-8 rounded-full bg-gradient-to-br from-rose-500 to-orange-500 flex items-center justify-center flex-shrink-0">
                   <Check className="w-4 h-4 text-white" />
@@ -97,7 +97,7 @@ export default function Ecommerce() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-10 md:py-14 bg-white">
+      <section className="py-10 md:py-14 bg-[#fafbfc]">
         <div className="max-w-4xl mx-auto px-4">
           <div className="text-center mb-8" data-aos="fade-up">
             <span className="inline-block px-4 py-1 bg-gradient-to-r from-rose-500 to-orange-500 text-white text-sm font-semibold rounded-full mb-3">
@@ -112,7 +112,7 @@ export default function Ecommerce() {
             {benefits.map((benefit, index) => (
               <div key={index} className="relative group">
                 <div className="absolute -inset-[1px] bg-gradient-to-r from-rose-500 to-orange-500 rounded-2xl opacity-50 group-hover:opacity-100 transition-opacity duration-500 blur-sm"></div>
-                <div className="relative bg-white rounded-2xl p-5 border border-gray-100 text-center h-full">
+                <div className="relative bg-[#fafbfc] rounded-2xl p-5 border border-gray-100 text-center h-full">
                   <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-rose-500 to-orange-500 flex items-center justify-center shadow-lg mx-auto mb-4">
                     <benefit.icon className="w-7 h-7 text-white" />
                   </div>
@@ -126,7 +126,7 @@ export default function Ecommerce() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-10 md:py-14">
+      <section className="py-10 md:py-14 bg-[#fafbfc]">
         <div className="max-w-4xl mx-auto px-4 text-center" data-aos="fade-up">
           <h2 className="text-2xl md:text-3xl font-bold text-[#0d233f] font-display mb-4">
             ¿Te interesa una tienda E-commerce?

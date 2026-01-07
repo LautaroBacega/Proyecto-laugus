@@ -60,7 +60,7 @@ export default function Portfolio() {
   }
 
   return (
-    <div className="py-20">
+    <div className="py-10">
       <SEO
         title="Portfolio - Proyectos de Desarrollo Web"
         description="Conocé nuestros proyectos: landing pages, tiendas online y sistemas de turnos. Trabajos realizados para clientes en Argentina."
@@ -71,9 +71,17 @@ export default function Portfolio() {
 
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-[#0d233f] mb-4" data-aos="fade-down">
-            Portfolio
-          </h1>
+          <div className="inline-block relative" data-aos="fade-up">
+              <h2
+                className="text-3xl md:text-4xl font-bold text-[#0d233f] mb-4 relative inline-block"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
+                Portfolio
+                <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#06b6d4] to-transparent rounded-full"></div>
+                
+              </h2>
+            </div>
+          
           <p className="text-[#475569] max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
             Algunos de los proyectos que hemos desarrollado para nuestros clientes.
           </p>

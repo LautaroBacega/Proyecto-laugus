@@ -2,6 +2,7 @@
 
 @theme inline {
   --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", system-ui, sans-serif;
   /* Updated color palette */
   --color-primary: #0d233f;
   --color-secondary: #f6fbff;
@@ -9,7 +10,8 @@
   --color-text-gray: #475569;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+/* Added Sora font for hero headings */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@700;800&display=swap");
 
 /* Import AOS styles */
 @import url("https://unpkg.com/aos@2.3.1/dist/aos.css");
@@ -75,17 +77,6 @@
   }
 }
 
-/* Pulse glow for WhatsApp buttons */
-@keyframes pulseGlow {
-  0%,
-  100% {
-    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
-  }
-  50% {
-    box-shadow: 0 0 20px 5px rgba(37, 211, 102, 0.2);
-  }
-}
-
 /* Animation classes */
 .animate-fade-in {
   animation: fadeIn 0.6s ease-out forwards;
@@ -105,10 +96,6 @@
 
 .animate-float {
   animation: float 3s ease-in-out infinite;
-}
-
-.animate-pulse-glow {
-  animation: pulseGlow 2s ease-in-out infinite;
 }
 
 /* Stagger delays */

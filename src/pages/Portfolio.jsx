@@ -2,42 +2,37 @@ import SEO from "../components/SEO"
 
 const projects = [
   {
-    title: "Consultorio Médico",
-    category: "Sitio con Sistema de Turnos",
-    description: "Sistema de turnos online para consultorio médico con gestión de pacientes.",
-    image: "/medical-clinic-website-modern.jpg",
+    title: "Accesorios Bmx",
+    category: "Ecommerce",
+    description: "Una tienda online completa para productos BMX con carrito de compras, sistema de pagos, autenticacion y gestión de inventario.",
+    image: "/tiendabmxIMG3.png",
   },
   {
-    title: "Estudio de Arquitectura",
+    title: "ABBMX Frestyle",
     category: "Landing Page",
-    description: "Landing page moderna para estudio de arquitectura con portfolio de proyectos.",
-    image: "/architecture-studio-website-minimal.jpg",
+    description: "Sitio web para una escuela de BMX Freestyle con información de cursos y instructores.",
+    image: "/abbmxIMG1.png",
   },
   {
-    title: "Tienda de Ropa",
-    category: "E-commerce",
-    description: "Tienda online completa con catálogo de productos y carrito de compras.",
-    image: "/clothing-store-ecommerce-website.jpg",
+    title: "LauchaBmxStore",
+    category: "Tienda Autogestionable",
+    description: "Tienda online estática desarrollada para Laucha BMX Store. El sitio público muestra un catálogo de productos y carrito de compras. Localmente incluye un panel de administración para gestionar productos (CRUD).",
+    image: "/LauchaBmxStore.png",
   },
   {
-    title: "Restaurante",
-    category: "Landing Page",
-    description: "Landing page con menú digital y sistema de reservas para restaurante.",
-    image: "/elegant-restaurant-website.png",
-  },
-  {
-    title: "Gimnasio",
+    title: "Somos Bahía",
     category: "Sitio con Sistema de Turnos",
-    description: "Plataforma para gimnasio con reserva de clases y gestión de membresías.",
-    image: "/gym-fitness-website-modern.jpg",
+    description: "Landing page moderna y responsive para el movimiento político Somos Bahía, con propuestas, valores, candidatos e integración de participación ciudadana.",
+    image: "/somosBahia1.png",
   },
   {
-    title: "Agencia de Marketing",
+    title: "SilverFitness",
     category: "Landing Page",
     description: "Landing page corporativa con servicios y casos de éxito.",
-    image: "/marketing-agency-website-professional.jpg",
+    image: "/SilverFitness1.png",
   },
 ]
+
 
 export default function Portfolio() {
   const portfolioSchema = {

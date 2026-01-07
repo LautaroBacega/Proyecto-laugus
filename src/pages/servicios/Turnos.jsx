@@ -1,6 +1,6 @@
 "use client"
 
-import { Check, Calendar, Clock, Bell, Smartphone } from "lucide-react"
+import { Check, Clock, Bell, Smartphone } from "lucide-react"
 import BackButton from "../../components/BackButton"
 
 const turnosFeatures = [
@@ -46,8 +46,7 @@ const useCases = [
 export default function Turnos() {
   return (
     <div className="bg-[#fafbfc]">
-
-      <BackButton gradient="from-emerald-500 to-teal-500" />
+      <BackButton gradient="from-emerald-500 to-teal-500" sticky />
 
       {/* Features Section */}
       <section className="py-10 md:py-14 bg-[#fafbfc]">

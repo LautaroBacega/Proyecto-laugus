@@ -1,6 +1,6 @@
 "use client"
 
-import { Check, Package, BarChart3, AlertTriangle, FileText } from "lucide-react"
+import { Check, BarChart3, AlertTriangle, FileText } from "lucide-react"
 import BackButton from "../../components/BackButton"
 
 const stockFeatures = [
@@ -46,7 +46,7 @@ const useCases = [
 export default function ControlStock() {
   return (
     <div className="bg-[#fafbfc]">
-      <BackButton />
+      <BackButton sticky />
 
       {/* Features Section */}
       <section className="py-10 md:py-14">

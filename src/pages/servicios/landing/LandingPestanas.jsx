@@ -1,6 +1,6 @@
 "use client"
 
-import { Check, Layers, Layout, Navigation, Palette } from "lucide-react"
+import { Check, Layout, Navigation, Palette } from "lucide-react"
 import BackButton from "../../../components/BackButton"
 
 const features = [
@@ -46,8 +46,7 @@ const tabExamples = [
 export default function LandingPestanas() {
   return (
     <div className="bg-[#fafbfc]">
-
-      <BackButton gradient="from-indigo-500 to-purple-500" />
+      <BackButton gradient="from-indigo-500 to-purple-500" sticky />
 
       {/* Features Section */}
       <section className="py-10 md:py-14 bg-[#fafbfc]">

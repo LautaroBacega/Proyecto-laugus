@@ -2,7 +2,6 @@
 
 import { Check, Globe, Edit3, Layers, ArrowRight } from "lucide-react"
 import { Link } from "react-router-dom"
-import BackButton from "../../components/BackButton"
 
 const landingVersions = [
   {
@@ -61,9 +60,6 @@ const landingVersions = [
 export default function LandingPage() {
   return (
     <div className="bg-[#fafbfc]">
-
-      <BackButton gradient="from-cyan-500 to-blue-500" />
-
       {/* Versiones Section - bg-[#fafbfc] for consistency */}
       <section className="py-10 md:py-14 bg-[#fafbfc]">
         <div className="max-w-6xl mx-auto px-4">

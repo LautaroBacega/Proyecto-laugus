@@ -1,6 +1,6 @@
 "use client"
 
-import { Check, Edit3, Settings, RefreshCw, Pencil } from "lucide-react"
+import { Check, Settings, RefreshCw, Pencil } from "lucide-react"
 import BackButton from "../../../components/BackButton"
 
 const features = [
@@ -44,8 +44,7 @@ const idealFor = [
 export default function LandingAutogestionable() {
   return (
     <div className="bg-[#fafbfc]">
-
-      <BackButton gradient="from-blue-500 to-indigo-500" />
+      <BackButton gradient="from-blue-500 to-indigo-500" sticky />
 
       {/* Features Section */}
       <section className="py-10 md:py-14 bg-[#fafbfc]">

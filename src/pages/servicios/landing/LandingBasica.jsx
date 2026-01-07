@@ -17,9 +17,8 @@ import {
   Link2,
   Server,
   Shield,
-  ArrowLeft,
 } from "lucide-react"
-import { useNavigate } from "react-router-dom"
+import BackButton from "../../../components/BackButton"
 
 const benefits = [
   {
@@ -138,21 +137,10 @@ function FAQItem({ question, answer, isOpen, onClick }) {
 
 export default function LandingBasica() {
   const [openFAQ, setOpenFAQ] = useState(null)
-  const navigate = useNavigate()
 
   return (
     <div className="bg-[#fafbfc]">
-      <div className="sticky top-[72px] z-40 bg-[#fafbfc] py-3 border-b border-gray-100">
-        <div className="max-w-6xl mx-auto px-4">
-          <button
-            onClick={() => navigate(-1)}
-            className="flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-5 py-2.5 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group"
-          >
-            <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform duration-300" />
-            <span className="font-medium">Volver</span>
-          </button>
-        </div>
-      </div>
+      <BackButton sticky />
 
       {/* Benefits Section - Two columns */}
       <section className="py-10 md:py-14">

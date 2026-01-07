@@ -1,6 +1,6 @@
 "use client"
 
-import { Check, ShoppingCart, Clock, Globe, Zap } from "lucide-react"
+import { Check, Clock, Globe, Zap } from "lucide-react"
 import BackButton from "../../components/BackButton"
 
 const ecommerceFeatures = [
@@ -35,8 +35,7 @@ const benefits = [
 export default function Ecommerce() {
   return (
     <div className="bg-[#fafbfc]">
-
-      <BackButton gradient="from-rose-500 to-orange-500" />
+      <BackButton gradient="from-rose-500 to-orange-500" sticky />
 
       {/* Features Section */}
       <section className="py-10 md:py-14 bg-[#fafbfc]">

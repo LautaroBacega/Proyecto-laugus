@@ -1,6 +1,6 @@
 "use client"
 
-import { Check, GraduationCap, Shield, Zap, Users } from "lucide-react"
+import { Check, Shield, Zap, Users } from "lucide-react"
 import BackButton from "../../components/BackButton"
 
 const elearningFeatures = [
@@ -35,8 +35,7 @@ const benefits = [
 export default function Elearning() {
   return (
     <div className="bg-[#fafbfc]">
-
-      <BackButton gradient="from-indigo-500 to-purple-500" />
+      <BackButton gradient="from-indigo-500 to-purple-500" sticky />
 
       {/* Features Section */}
       <section className="py-10 md:py-14 bg-[#fafbfc]">

@@ -71,7 +71,6 @@ export default function Contact() {
             >
               Contacto
               <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#06b6d4] to-transparent rounded-full"></div>
-              <div className="absolute -bottom-3 left-1/4 right-1/4 h-1 bg-gradient-to-r from-[#06b6d4] to-[#22d3ee] rounded-full"></div>
             </h1>
           </div>
           <p

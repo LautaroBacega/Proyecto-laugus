@@ -73,7 +73,7 @@ export default function Portfolio() {
         <div className="text-center mb-12">
           <div className="inline-block relative" data-aos="fade-up">
               <h2
-                className="text-3xl md:text-4xl font-bold text-[#0d233f] mb-4 relative inline-block"
+                className="text-4xl md:text-4xl font-bold text-[#0d233f] mb-4 relative inline-block"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 Portfolio

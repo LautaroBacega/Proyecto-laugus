@@ -1,4 +1,4 @@
-import { Users, Target, Zap, Code, Heart } from "lucide-react"
+import { Users, Target, Zap, Code } from "lucide-react"
 
 const values = [
   {
@@ -24,11 +24,10 @@ const values = [
 export default function About() {
   return (
     <div className="bg-[#f6fbff]">
-
       {/* Values */}
-      <section className="py-20 bg-white">
+      <section className="py-10 bg-white">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8">
             <div className="inline-block relative" data-aos="fade-up">
               <h2
                 className="text-3xl md:text-4xl font-bold text-[#0d233f] mb-4 relative inline-block"
@@ -40,7 +39,7 @@ export default function About() {
               </h2>
             </div>
             <p
-              className="text-lg text-[#475569] max-w-2xl mx-auto font-light mt-6"
+              className="text-lg text-[#475569] max-w-2xl mx-auto font-light mt-3"
               data-aos="fade-up"
               data-aos-delay="100"
             >
@@ -48,7 +47,7 @@ export default function About() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {values.map((value, index) => (
               <div
                 key={index}
@@ -82,7 +81,7 @@ export default function About() {
         </div>
       </section>
       {/* About Text */}
-      <section className="py-20 bg-white">
+      <section className="py-10 bg-white">
         <div className="max-w-4xl mx-auto px-4">
           <div
             className="bg-gradient-to-br from-white to-[#f6fbff] p-10 md:p-14 rounded-3xl shadow-lg border border-gray-100 relative overflow-hidden"

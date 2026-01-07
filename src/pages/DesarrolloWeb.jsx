@@ -272,7 +272,7 @@ function ProductCard({ title, price, icon: Icon, features, gradient, whatsappMes
 
         {/* Botón WhatsApp */}
         <a
-          href={`https://wa.me/5491112345678?text=${encodeURIComponent(whatsappMessage)}`}
+          href={`https://wa.me/541173739055`}
           target="_blank"
           rel="noopener noreferrer"
           className={`mt-auto inline-flex items-center gap-3 bg-gradient-to-r ${gradient} text-white px-5 py-3 rounded-xl font-semibold hover:shadow-lg hover:scale-[1.02] transition-all duration-300 w-full justify-center`}
@@ -299,17 +299,14 @@ export default function DesarrolloWeb() {
 
         <div className="max-w-6xl mx-auto px-4 text-center py-8 relative z-10">
           <h1
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-white font-display"
-            data-aos="fade-down"
-            data-aos-duration="1000"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-white animate-zoom-in"
+            style={{ fontFamily: "'Sora', sans-serif", animationDelay: "0.1s" }}
           >
             Desarrollo Web
           </h1>
           <p
-            className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-sans"
-            data-aos="fade-up"
-            data-aos-delay="200"
-            data-aos-duration="1000"
+            className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed opacity-0 animate-zoom-in-up"
+            style={{ fontFamily: "'Inter', sans-serif", animationDelay: "0.3s" }}
           >
             Creamos páginas web profesionales que impulsan tu negocio y te conectan con más clientes.
           </p>
@@ -319,7 +316,7 @@ export default function DesarrolloWeb() {
       <section id="servicios" className="py-10 md:py-14">
         <div className="max-w-6xl mx-auto px-4 space-y-4">
           <div data-aos="fade-up">
-            <CollapsibleSection title="¿Quién debería tener una página web?" gradient="from-cyan-500 to-blue-500">
+            <CollapsibleSection title="¿Quienes necesitan una página web?" gradient="from-cyan-500 to-blue-500">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {whoNeedsWebsite.map((item, index) => (
                   <div
@@ -340,7 +337,7 @@ export default function DesarrolloWeb() {
           </div>
 
           <div data-aos="fade-up" data-aos-delay="100">
-            <CollapsibleSection title="¿Por qué tener una página web?" gradient="from-blue-500 to-indigo-500">
+            <CollapsibleSection title="¿Por qué necesitás una página web?" gradient="from-blue-500 to-indigo-500">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {whyHaveWebsite.map((item, index) => (
                   <div

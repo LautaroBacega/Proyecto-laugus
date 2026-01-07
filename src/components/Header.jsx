@@ -45,7 +45,7 @@ export default function Header() {
               </Link>
             ))}
             <a
-              href="https://wa.me/5491112345678"
+              href="https://wa.me/541173739055"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 bg-[#25D366] text-white px-4 py-2 rounded-lg font-semibold text-sm hover:bg-[#20bd5a] transition-colors btn-hover"
@@ -87,7 +87,7 @@ export default function Header() {
               </Link>
             ))}
             <a
-              href="https://wa.me/5491112345678"
+              href="https://wa.me/541173739055"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 bg-[#25D366] text-white px-4 py-2 rounded-lg font-semibold text-sm hover:bg-[#20bd5a] transition-colors w-fit btn-hover"

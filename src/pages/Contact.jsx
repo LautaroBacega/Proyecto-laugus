@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { MessageCircle, Send, Clock } from "lucide-react"
+import { Send } from "lucide-react"
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -32,68 +32,38 @@ export default function Contact() {
   }
 
   return (
-    <div className="py-20">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-[#0d233f] mb-4" data-aos="fade-down">
-            Contacto
-          </h1>
-          <p className="text-[#475569] max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+    <div className="py-10">
+      <div className="max-w-4xl mx-auto px-4">
+        <div className="text-center mb-6">
+          <div className="inline-block relative" data-aos="fade-down">
+            <h1
+              className="text-4xl md:text-5xl font-bold text-[#0d233f] mb-4 relative inline-block"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              Contacto
+              <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#06b6d4] to-transparent rounded-full"></div>
+              <div className="absolute -bottom-3 left-1/4 right-1/4 h-1 bg-gradient-to-r from-[#06b6d4] to-[#22d3ee] rounded-full"></div>
+            </h1>
+          </div>
+          <p
+            className="text-[#475569] max-w-2xl mx-auto mt-6 text-lg font-light"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
             ¿Tenés un proyecto en mente? Contanos y te respondemos en pocas horas.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Options */}
-          <div>
-            <div
-              className="bg-[#0d233f] text-white p-8 rounded-2xl mb-6 card-hover"
-              data-aos="fade-right"
-              data-aos-delay="200"
-            >
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 bg-[#06b6d4] rounded-xl flex items-center justify-center animate-float">
-                  <MessageCircle className="w-6 h-6 text-[#0d233f]" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-lg hover-lift">WhatsApp</h3>
-                  <p className="text-gray-400 text-sm">La forma más rápida de contactarnos</p>
-                </div>
-              </div>
-              <a
-                href="https://wa.me/5491112345678"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full bg-[#06b6d4] text-[#0d233f] text-center py-3 rounded-lg font-semibold hover:bg-[#22d3ee] transition-colors btn-hover"
-              >
-                Enviar mensaje por WhatsApp
-              </a>
-            </div>
-
-            <div
-              className="bg-white p-6 rounded-2xl border border-gray-100 flex items-center gap-4 card-hover"
-              data-aos="fade-right"
-              data-aos-delay="300"
-            >
-              <div className="w-12 h-12 bg-[#06b6d4]/10 rounded-xl flex items-center justify-center">
-                <Clock className="w-6 h-6 text-[#06b6d4] icon-hover" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-[#0d233f] hover-lift">Tiempo de respuesta</h3>
-                <p className="text-[#475569] text-sm">Respondemos en pocas horas</p>
-              </div>
-            </div>
-          </div>
-
+        <div className="max-w-xl mx-auto">
           {/* Contact Form */}
           <div
             className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 card-hover"
-            data-aos="fade-left"
+            data-aos="fade-up"
             data-aos-delay="200"
           >
             {submitted ? (
               <div className="text-center py-8" data-aos="zoom-in">
-                <div className="w-16 h-16 bg-[#06b6d4]/10 rounded-full flex items-center justify-center mx-auto mb-4 animate-float">
+                <div className="w-16 h-16 bg-[#06b6d4]/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Send className="w-8 h-8 text-[#06b6d4]" />
                 </div>
                 <h3 className="text-xl font-semibold text-[#0d233f] mb-2">¡Mensaje enviado!</h3>

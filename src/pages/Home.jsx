@@ -4,8 +4,8 @@ import { Globe, ShoppingCart, GraduationCap, ArrowRight, Star } from "lucide-rea
 const services = [
   {
     icon: Globe,
-    title: "Desarrollo Web – Páginas Web",
-    description: "Institucional, blog personal, cursos virtuales, blog de noticias, entre otros.",
+    title: "Páginas Web",
+    description: "Institucional, blog personal, blog de noticias, entre otros.",
     cta: "MÁS INFORMACIÓN",
     link: "/desarrollo-web",
   },
@@ -58,26 +58,27 @@ export default function Home() {
       <section className="bg-gradient-to-br from-[#0d233f] via-[#0d233f] to-[#1a3a5f] text-white min-h-screen flex items-center justify-center">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <h1
-            className="text-4xl md:text-5xl lg:text-7xl font-bold mb-5 text-balance leading-tight"
-            style={{ fontFamily: "'Sora', sans-serif" }}
+            className="text-4xl md:text-5xl lg:text-7xl font-bold mb-5 text-balance leading-tight animate-zoom-in"
+            style={{ fontFamily: "'Sora', sans-serif", animationDelay: "0.1s" }}
             data-aos="fade-down"
             data-aos-duration="1000"
           >
             Soluciones web simples, rápidas y efectivas
           </h1>
           <p
-            className="text-lg md:text-xl text-gray-300 mb-8 font-light max-w-3xl mx-auto"
-            style={{ fontFamily: "'Inter', sans-serif" }}
+            className="text-lg md:text-xl text-gray-300 mb-8 font-light max-w-3xl mx-auto opacity-0 animate-zoom-in-up"
+            style={{ fontFamily: "'Inter', sans-serif", animationDelay: "0.3s" }}
             data-aos="fade-up"
             data-aos-delay="200"
           >
             Desarrollo de landing pages y sitios para negocios.
           </p>
           <a
-            href="https://wa.me/5491112345678"
+            href="https://wa.me/541173739055"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-[#25D366] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#20bd5a] transition-all duration-300 hover:scale-105"
+            className="inline-flex items-center gap-3 bg-[#25D366] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#20bd5a] transition-all duration-300 hover:scale-105 opacity-0 animate-zoom-in-button"
+            style={{ animationDelay: "0.5s" }}
             data-aos="zoom-in"
             data-aos-delay="400"
           >
@@ -89,9 +90,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-16 bg-gradient-to-b from-white via-[#fafbfc] to-white">
+      <section className="py-8 bg-gradient-to-b from-white via-[#fafbfc] to-white">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-12">
+          <div className="text-center mb-6">
             <div className="inline-block relative" data-aos="fade-up">
               <h2
                 className="text-4xl md:text-5xl font-bold text-[#0d233f] mb-4 relative inline-block"
@@ -117,7 +118,7 @@ export default function Home() {
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-[#06b6d4]/8 via-[#22d3ee]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                <div className="relative p-7 lg:p-8">
+                <div className="relative p-7 lg:p-8 h-full flex flex-col">
                   {/* Icon container */}
                   <div className="mb-5 relative">
                     <div className="w-14 h-14 bg-gradient-to-br from-[#06b6d4]/15 to-[#06b6d4]/5 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500 border border-[#06b6d4]/20">
@@ -135,12 +136,12 @@ export default function Home() {
                     {service.title}
                   </h3>
 
-                  <p className="text-[#475569] leading-relaxed mb-5 font-light">{service.description}</p>
+                  <p className="text-[#475569] leading-relaxed mb-5 font-light flex-grow">{service.description}</p>
 
                   {/* CTA Link */}
                   <Link
                     to={service.link}
-                    className="inline-flex items-center gap-2 text-[#06b6d4] font-semibold text-sm uppercase tracking-wide group-hover:gap-3 transition-all duration-300"
+                    className="inline-flex items-center gap-2 text-[#06b6d4] font-semibold text-sm uppercase tracking-wide group-hover:gap-3 transition-all duration-300 mt-auto"
                   >
                     {service.cta}
                     <ArrowRight className="w-4 h-4" strokeWidth={2.5} />
@@ -155,9 +156,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-14 bg-white">
+      <section className="py-7 bg-white">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-12">
+          <div className="text-center mb-6">
             <div className="inline-block relative" data-aos="fade-up">
               <h2
                 className="text-3xl md:text-4xl font-bold text-[#0d233f] mb-4 relative inline-block"
@@ -168,7 +169,7 @@ export default function Home() {
                 <div className="absolute -bottom-3 left-1/4 right-1/4 h-1 bg-gradient-to-r from-[#06b6d4] to-[#22d3ee] rounded-full"></div>
               </h2>
             </div>
-            <p className="text-[#475569] max-w-2xl mx-auto font-light mt-5" data-aos="fade-up" data-aos-delay="100">
+            <p className="text-[#475569] max-w-2xl mx-auto font-light mt-3" data-aos="fade-up" data-aos-delay="100">
               Lo que dicen nuestros clientes sobre nuestro trabajo
             </p>
           </div>

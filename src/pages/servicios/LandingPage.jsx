@@ -148,7 +148,7 @@ export default function LandingPage() {
                       />
                     </Link>
                     <a
-                      href={`https://wa.me/5491112345678?text=Hola!%20Me%20interesa%20la%20${encodeURIComponent(version.title)}`}
+                      href={`https://wa.me/541173739055?text=Hola!%20Me%20interesa%20la%20${encodeURIComponent(version.title)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className={`inline-flex items-center justify-center gap-2 bg-gradient-to-r ${version.gradient} text-white px-5 py-3 rounded-xl font-semibold hover:shadow-lg hover:scale-[1.02] transition-all duration-300 w-full`}
@@ -174,7 +174,7 @@ export default function LandingPage() {
             Contactanos y te asesoramos para encontrar la opción ideal para tu negocio.
           </p>
           <a
-            href="https://wa.me/5491112345678?text=Hola!%20Necesito%20asesoramiento%20para%20elegir%20una%20Landing%20Page"
+            href="https://wa.me/541173739055?text=Hola!%20Necesito%20asesoramiento%20para%20elegir%20una%20Landing%20Page"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg hover:scale-[1.02] transition-all duration-300"

@@ -94,7 +94,7 @@ export default function Ecommerce() {
           </h2>
           <p className="text-[#475569] mb-6 max-w-xl mx-auto">Contactanos y te ayudamos a crear tu tienda online.</p>
           <a
-            href="https://wa.me/5491112345678?text=Hola!%20Me%20interesa%20una%20tienda%20E-commerce"
+            href="https://wa.me/541173739055?text=Hola!%20Me%20interesa%20una%20tienda%20E-commerce"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-gradient-to-r from-rose-500 to-orange-500 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg hover:scale-[1.02] transition-all duration-300"

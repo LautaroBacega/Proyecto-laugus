@@ -18,7 +18,6 @@ import {
   Link,
   MessageCircle,
 } from "lucide-react"
-import BackButton from "../../../components/BackButton"
 
 const targetAudience = [
   { icon: Users, text: "Negocios con contenido cambiante que necesitan actualizar frecuentemente" },
@@ -94,8 +93,6 @@ export default function LandingAutogestionable() {
 
   return (
     <div className="bg-[#fafbfc]">
-      {/* <BackButton gradient="from-blue-500 to-indigo-500" sticky /> */}
-
       <section className="py-4 md:py-6">
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex flex-col lg:flex-row gap-6">
@@ -125,7 +122,6 @@ export default function LandingAutogestionable() {
                     </span>
                   </div>
 
-                  {/* Botón WhatsApp */}
                   <a
                     href="https://wa.me/541173739055?text=Hola!%20Me%20interesa%20la%20Landing%20Page%20Autogestionable"
                     target="_blank"
@@ -139,7 +135,6 @@ export default function LandingAutogestionable() {
                   </a>
                 </div>
 
-                {/* El primer año incluye - compacto */}
                 <div className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
                   <h3 className="text-sm font-bold text-[#0d233f] mb-3 text-center">Incluido en el primer año</h3>
                   <div className="space-y-2">
@@ -154,9 +149,41 @@ export default function LandingAutogestionable() {
                     ))}
                   </div>
                 </div>
+
+                <div className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
+                  <h3 className="text-sm font-bold text-[#0d233f] mb-3 text-center">Información de pago</h3>
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2 text-sm">
+                      <div className="w-6 h-6 rounded-full bg-gradient-to-br from-blue-500 to-indigo-500 flex items-center justify-center flex-shrink-0">
+                        <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
+                          />
+                        </svg>
+                      </div>
+                      <span className="text-[#0d233f] font-medium">Método de pago: Transferencia</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm">
+                      <div className="w-6 h-6 rounded-full bg-gradient-to-br from-blue-500 to-indigo-500 flex items-center justify-center flex-shrink-0">
+                        <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                          />
+                        </svg>
+                      </div>
+                      <span className="text-[#0d233f] font-medium">Realizamos factura</span>
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              {/* Para quién es - compacto como texto con iconos inline */}
+              {/* Para quién es */}
               <div data-aos="fade-right">
                 <h2 className="text-lg font-bold text-[#0d233f] font-display mb-2">¿Para quién es este servicio?</h2>
                 <div className="space-y-1.5">
@@ -169,7 +196,7 @@ export default function LandingAutogestionable() {
                 </div>
               </div>
 
-              {/* Qué incluye el diseño - compacto como texto con iconos inline */}
+              {/* Qué incluye el diseño */}
               <div data-aos="fade-right" data-aos-delay="50">
                 <h2 className="text-lg font-bold text-[#0d233f] font-display mb-2">¿Qué incluye el diseño?</h2>
                 <div className="flex flex-wrap gap-x-4 gap-y-1.5">
@@ -202,7 +229,6 @@ export default function LandingAutogestionable() {
             {/* COLUMNA DERECHA - 32% (desktop only) */}
             <div className="hidden lg:block lg:w-[32%]">
               <div className="space-y-4" data-aos="fade-left">
-                {/* Precio */}
                 <div className="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl p-5 text-white text-center shadow-lg">
                   <p className="text-xs uppercase tracking-wider mb-1 opacity-80">Precio único</p>
                   <div className="text-3xl font-bold mb-1">Desde $100.000</div>
@@ -215,7 +241,6 @@ export default function LandingAutogestionable() {
                     </span>
                   </div>
 
-                  {/* Botón WhatsApp */}
                   <a
                     href="https://wa.me/541173739055?text=Hola!%20Me%20interesa%20la%20Landing%20Page%20Autogestionable"
                     target="_blank"
@@ -229,7 +254,6 @@ export default function LandingAutogestionable() {
                   </a>
                 </div>
 
-                {/* El primer año incluye - compacto */}
                 <div className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
                   <h3 className="text-sm font-bold text-[#0d233f] mb-3 text-center">Incluido en el primer año</h3>
                   <div className="space-y-2">
@@ -242,6 +266,38 @@ export default function LandingAutogestionable() {
                         <Check className="w-4 h-4 text-green-500 ml-auto" />
                       </div>
                     ))}
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
+                  <h3 className="text-sm font-bold text-[#0d233f] mb-3 text-center">Información de pago</h3>
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2 text-sm">
+                      <div className="w-6 h-6 rounded-full bg-gradient-to-br from-blue-500 to-indigo-500 flex items-center justify-center flex-shrink-0">
+                        <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
+                          />
+                        </svg>
+                      </div>
+                      <span className="text-[#0d233f] font-medium">Método de pago: Transferencia</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm">
+                      <div className="w-6 h-6 rounded-full bg-gradient-to-br from-blue-500 to-indigo-500 flex items-center justify-center flex-shrink-0">
+                        <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                          />
+                        </svg>
+                      </div>
+                      <span className="text-[#0d233f] font-medium">Realizamos factura</span>
+                    </div>
                   </div>
                 </div>
               </div>

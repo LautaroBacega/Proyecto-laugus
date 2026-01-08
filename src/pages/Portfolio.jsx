@@ -6,14 +6,14 @@ const projects = [
     category: "Ecommerce",
     description:
       "Una tienda online completa para productos BMX con carrito de compras, sistema de pagos, autenticacion y gestión de inventario.",
-    image: "/tiendabmxIMG3.png",
+    image: "/portfolio/tiendabmxIMG3.png",
     url: "https://accesoriosbmx.onrender.com/",
   },
   {
     title: "ABBMX Frestyle",
     category: "Landing Page",
     description: "Sitio web para una escuela de BMX Freestyle con información de cursos y instructores.",
-    image: "/abbmxIMG1.png",
+    image: "/portfolio/abbmxIMG1.png",
     url: "https://abbmxfreestyle.netlify.app/",
   },
   {
@@ -21,7 +21,7 @@ const projects = [
     category: "Tienda Autogestionable",
     description:
       "Tienda online estática desarrollada para Laucha BMX Store. El sitio público muestra un catálogo de productos y carrito de compras. Localmente incluye un panel de administración para gestionar productos (CRUD).",
-    image: "/LauchaBmxStore.png",
+    image: "/portfolio/LauchaBmxStore.png",
     url: "https://lauchabmxstore.netlify.app/",
   },
   {
@@ -29,14 +29,14 @@ const projects = [
     category: "Sitio con Sistema de Turnos",
     description:
       "Landing page moderna y responsive para el movimiento político Somos Bahía, con propuestas, valores, candidatos e integración de participación ciudadana.",
-    image: "/somosBahia1.png",
+    image: "/portfolio/somosBahia1.png",
     url: "https://somosbahia.netlify.app/",
   },
   {
     title: "SilverFitness",
     category: "Landing Page",
     description: "Landing page corporativa con servicios y casos de éxito.",
-    image: "/SilverFitness1.png",
+    image: "/portfolio/SilverFitness1.png",
     url: "https://silverfitness1.netlify.app/",
   },
 ]

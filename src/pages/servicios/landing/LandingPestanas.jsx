@@ -17,7 +17,6 @@ import {
   Layout,
   Navigation,
 } from "lucide-react"
-import BackButton from "../../../components/BackButton"
 
 const targetAudience = [
   { icon: Users, text: "Negocios que necesitan mostrar más información organizada en secciones" },
@@ -56,7 +55,8 @@ const faqs = [
   },
   {
     question: "¿La página puede ser autogestionable?",
-    answer: "Sí. Podés editar textos e imágenes sin depender del desarrollador. El costo de la autogestión varía según la cantidad de pestañas adicionales.",
+    answer:
+      "Sí. Podés editar textos e imágenes sin depender del desarrollador. El costo de la autogestión varía según la cantidad de pestañas adicionales.",
   },
   {
     question: "¿Puedo elegir colores, imágenes y textos?",
@@ -100,7 +100,6 @@ export default function LandingPestanas() {
 
   return (
     <div className="bg-[#fafbfc]">
-      {/* <BackButton gradient="from-blue-500 to-indigo-500" sticky /> */}
       <section className="py-4 md:py-6">
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex flex-col lg:flex-row gap-6">
@@ -117,7 +116,6 @@ export default function LandingPestanas() {
 
               {/* Mobile: Precio y primer año */}
               <div className="lg:hidden space-y-4">
-                {/* Precio */}
                 <div className="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl p-5 text-white text-center shadow-lg">
                   <p className="text-xs uppercase tracking-wider mb-1 opacity-80">Precio único</p>
                   <div className="text-3xl font-bold mb-1">Desde $90.000</div>
@@ -130,7 +128,6 @@ export default function LandingPestanas() {
                     </span>
                   </div>
 
-                  {/* Botón WhatsApp */}
                   <a
                     href="https://wa.me/541173739055?text=Hola!%20Me%20interesa%20la%20Landing%20Page%20con%20Pestañas"
                     target="_blank"
@@ -144,7 +141,6 @@ export default function LandingPestanas() {
                   </a>
                 </div>
 
-                {/* El primer año incluye */}
                 <div className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
                   <h3 className="text-sm font-bold text-[#0d233f] mb-3 text-center">Incluido en el primer año</h3>
                   <div className="space-y-2">
@@ -157,6 +153,38 @@ export default function LandingPestanas() {
                         <Check className="w-4 h-4 text-green-500 ml-auto" />
                       </div>
                     ))}
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
+                  <h3 className="text-sm font-bold text-[#0d233f] mb-3 text-center">Información de pago</h3>
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2 text-sm">
+                      <div className="w-6 h-6 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center flex-shrink-0">
+                        <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
+                          />
+                        </svg>
+                      </div>
+                      <span className="text-[#0d233f] font-medium">Método de pago: Transferencia</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm">
+                      <div className="w-6 h-6 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center flex-shrink-0">
+                        <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                          />
+                        </svg>
+                      </div>
+                      <span className="text-[#0d233f] font-medium">Realizamos factura</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -207,7 +235,6 @@ export default function LandingPestanas() {
             {/* COLUMNA DERECHA - 32% */}
             <div className="hidden lg:block lg:w-[32%]">
               <div className="space-y-4" data-aos="fade-left">
-                {/* Precio */}
                 <div className="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl p-5 text-white text-center shadow-lg">
                   <p className="text-xs uppercase tracking-wider mb-1 opacity-80">Precio único</p>
                   <div className="text-3xl font-bold mb-1">Desde $90.000</div>
@@ -220,7 +247,6 @@ export default function LandingPestanas() {
                     </span>
                   </div>
 
-                  {/* Botón WhatsApp */}
                   <a
                     href="https://wa.me/541173739055?text=Hola!%20Me%20interesa%20la%20Landing%20Page%20con%20Pestañas"
                     target="_blank"
@@ -234,7 +260,6 @@ export default function LandingPestanas() {
                   </a>
                 </div>
 
-                {/* El primer año incluye */}
                 <div className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
                   <h3 className="text-sm font-bold text-[#0d233f] mb-3 text-center">Incluido en el primer año</h3>
                   <div className="space-y-2">
@@ -247,6 +272,38 @@ export default function LandingPestanas() {
                         <Check className="w-4 h-4 text-green-500 ml-auto" />
                       </div>
                     ))}
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
+                  <h3 className="text-sm font-bold text-[#0d233f] mb-3 text-center">Información de pago</h3>
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2 text-sm">
+                      <div className="w-6 h-6 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center flex-shrink-0">
+                        <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
+                          />
+                        </svg>
+                      </div>
+                      <span className="text-[#0d233f] font-medium">Método de pago: Transferencia</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm">
+                      <div className="w-6 h-6 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center flex-shrink-0">
+                        <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                          />
+                        </svg>
+                      </div>
+                      <span className="text-[#0d233f] font-medium">Realizamos factura</span>
+                    </div>
                   </div>
                 </div>
               </div>

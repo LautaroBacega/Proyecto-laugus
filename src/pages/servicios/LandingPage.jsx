@@ -81,7 +81,9 @@ export default function LandingPage() {
                     <version.icon className="w-7 h-7 text-white" />
                   </div>
 
-                  <h3 className="text-xl md:text-2xl font-bold text-[#0d233f] font-display mb-2">{version.title}</h3>
+                  <h3 className="text-xl md:text-2xl font-bold text-[#0d233f] font-display mb-2 min-h-[3.5rem] flex items-start">
+                    {version.title}
+                  </h3>
 
                   <p
                     className={`text-2xl font-bold bg-gradient-to-r ${version.gradient} bg-clip-text text-transparent mb-3`}

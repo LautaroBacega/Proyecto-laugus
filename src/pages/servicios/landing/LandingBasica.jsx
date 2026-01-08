@@ -131,8 +131,7 @@ export default function LandingBasica() {
 
   return (
     <div className="bg-[#fafbfc]">
-      <BackButton sticky />
-
+      {/* <BackButton sticky /> */}
       <section className="py-4 md:py-6">
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex flex-col lg:flex-row gap-6">

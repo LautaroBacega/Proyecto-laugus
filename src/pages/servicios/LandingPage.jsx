@@ -7,7 +7,7 @@ const landingVersions = [
   {
     id: "base",
     title: "Landing Page básica",
-    price: "$70.000",
+    price: "Desde $70.000",
     icon: Globe,
     gradient: "from-cyan-500 to-blue-500",
     description: "Página web de una sola sección para presentar tu servicio o producto de forma clara y efectiva.",
@@ -26,7 +26,7 @@ const landingVersions = [
   {
     id: "autogestionable",
     title: "Landing Autogestionable",
-    price: "$100.000",
+    price: "Desde $100.000",
     icon: Edit3,
     gradient: "from-blue-500 to-indigo-500",
     description: "Editá textos, imágenes y contenido vos mismo sin depender del desarrollador.",

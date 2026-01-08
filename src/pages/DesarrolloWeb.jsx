@@ -244,7 +244,7 @@ function ProductCard({ title, price, description, icon: Icon, gradient, to }) {
 export default function DesarrolloWeb() {
   return (
     <div className="bg-[#fafbfc]">
-      <section className="py-10 md:py-14 bg-white">
+      <section className="py-10 md:py-14 bg-[#fafbfc]">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-8 md:mb-10" data-aos="fade-up">
             <h2 className="text-2xl md:text-3xl font-bold text-[#0d233f] font-display">Productos disponibles</h2>
@@ -311,7 +311,7 @@ export default function DesarrolloWeb() {
           </div>
         </div>
       </section>
-      <section id="servicios" className="py-10 md:py-14">
+      <section id="servicios" className="py-10 md:py-14 bg-[#fafbfc]">
         <div className="max-w-6xl mx-auto px-4 space-y-4">
           <div data-aos="fade-up">
             <CollapsibleSection title="¿Quienes necesitan una página web?" gradient="from-cyan-500 to-blue-500">
@@ -358,7 +358,7 @@ export default function DesarrolloWeb() {
         </div>
       </section>
 
-      <section className="py-10 md:py-14 relative overflow-hidden">
+      <section className="py-10 md:py-14 relative overflow-hidden bg-[#fafbfc]">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-50/30 to-transparent"></div>
         <div className="max-w-6xl mx-auto px-4 relative z-10">
           <div className="text-center mb-8 md:mb-10" data-aos="fade-up">

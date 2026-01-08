@@ -1,48 +1,61 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { Send } from "lucide-react"
+import emailjs from "@emailjs/browser"
 import SEO from "../components/SEO"
 
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+
+const contactSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  name: "Contacto - Laugus",
+  description: "Contactanos para tu proyecto de desarrollo web. Respuesta en pocas horas.",
+  url: "https://laugus.com.ar/contacto",
+  mainEntity: {
+    "@type": "Organization",
+    name: "Laugus",
+    telephone: "+54-11-7373-9055",
+    email: "contacto@laugus.com.ar",
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+54-11-7373-9055",
+      contactType: "customer service",
+      availableLanguage: ["Spanish"],
+    },
+  },
+}
+
 export default function Contact() {
+  const formRef = useRef(null)
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    message: "",
+    project: "", // renamed from "message" to "project" to match EmailJS template
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
-
-  const contactSchema = {
-    "@context": "https://schema.org",
-    "@type": "ContactPage",
-    name: "Contacto - Laugus",
-    description: "Contactanos para tu proyecto de desarrollo web. Respuesta en pocas horas.",
-    url: "https://laugus.com.ar/contacto",
-    mainEntity: {
-      "@type": "Organization",
-      name: "Laugus",
-      telephone: "+54-11-7373-9055",
-      email: "contacto@laugus.com.ar",
-      contactPoint: {
-        "@type": "ContactPoint",
-        telephone: "+54-11-7373-9055",
-        contactType: "customer service",
-        availableLanguage: ["Spanish"],
-      },
-    },
-  }
+  const [error, setError] = useState(null)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setError(null)
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000))
+    try {
+      await emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, formRef.current, EMAILJS_PUBLIC_KEY)
 
-    setIsSubmitting(false)
-    setSubmitted(true)
-    setFormData({ name: "", email: "", message: "" })
+      setSubmitted(true)
+      setFormData({ name: "", email: "", project: "" }) // updated reset to use "project"
+    } catch (err) {
+      console.error("EmailJS error:", err)
+      setError("Hubo un error al enviar el mensaje. Por favor, intentá de nuevo.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (e) => {
@@ -104,8 +117,14 @@ export default function Contact() {
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit}>
+              <form ref={formRef} onSubmit={handleSubmit}>
                 <h3 className="text-xl font-semibold text-[#0d233f] mb-6 hover-lift">Envianos un mensaje</h3>
+
+                {error && (
+                  <div className="mb-4 p-3 bg-red-50 border border-red-200 text-red-600 rounded-lg text-sm">
+                    {error}
+                  </div>
+                )}
 
                 <div className="space-y-4">
                   <div>
@@ -141,13 +160,13 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-[#0d233f] mb-2">
+                    <label htmlFor="project" className="block text-sm font-medium text-[#0d233f] mb-2">
                       Mensaje
                     </label>
                     <textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
+                      id="project"
+                      name="project"
+                      value={formData.project}
                       onChange={handleChange}
                       required
                       rows={4}

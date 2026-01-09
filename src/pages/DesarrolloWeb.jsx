@@ -246,18 +246,6 @@ export default function DesarrolloWeb() {
     <div className="bg-[#fafbfc]">
       <section className="py-10 md:py-14 bg-[#fafbfc]">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-8 md:mb-10" data-aos="fade-up">
-            <h2
-                className="text-3xl md:text-3xl font-bold text-[#0d233f] mb-4 relative inline-block"
-                style={{ fontFamily: "var(--font-display)" }}
-              >
-                Productos disponibles
-                <div className="absolute -bottom-3 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#06b6d4] to-transparent rounded-full"></div>
-            </h2>
-            <p className="text-[#475569] mt-3 max-w-2xl mx-auto text-sm md:text-base">
-              Elegí la opción que mejor se adapte a tus necesidades.
-            </p>
-          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
             <div data-aos="fade-up" data-aos-delay="100">

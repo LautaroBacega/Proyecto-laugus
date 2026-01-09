@@ -61,16 +61,9 @@ export default function LandingPage() {
   return (
     <div className="bg-[#fafbfc]">
       {/* Versiones Section - bg-[#fafbfc] for consistency */}
-      <section className="py-10 md:py-14 bg-[#fafbfc]">
+      <section className="py-10 md:py-4 bg-[#fafbfc]">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-8" data-aos="fade-up">
-            <h2
-                className="text-3xl md:text-3xl font-bold text-[#0d233f] mb-4 relative inline-block"
-                style={{ fontFamily: "var(--font-display)" }}
-              >
-                Elegí tu futuro sitio web
-                <div className="absolute -bottom-3 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#06b6d4] to-transparent rounded-full"></div>
-            </h2>
             
           </div>
 

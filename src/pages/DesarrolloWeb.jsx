@@ -214,19 +214,24 @@ function CollapsibleSection({ title, children, defaultOpen = false, gradient = "
   )
 }
 
-function ProductCard({ title, price, description, icon: Icon, to }) {
+function ProductCard({ title, price, description, icon: Icon, gradient, to }) {
   return (
     <div className="relative group h-full">
-      <div className="relative bg-white rounded-3xl p-5 md:p-6 shadow-md flex flex-col h-full border border-gray-200 hover:bg-gray-50 hover:shadow-lg hover:border-gray-300 transition-all duration-500 ease-out">
-        <div className="w-14 h-14 rounded-2xl bg-gray-100 flex items-center justify-center mb-4 group-hover:bg-gray-200 transition-colors duration-500">
-          <Icon className="w-7 h-7 text-gray-600" />
+      <div
+        className={`absolute -inset-[2px] bg-gradient-to-r ${gradient} rounded-3xl opacity-50 group-hover:opacity-100 transition-opacity duration-500 blur-md`}
+      ></div>
+      <div className="relative bg-white rounded-3xl p-5 md:p-6 shadow-xl flex flex-col h-full border border-gray-100">
+        <div
+          className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${gradient} flex items-center justify-center shadow-lg mb-4`}
+        >
+          <Icon className="w-7 h-7 text-white" />
         </div>
         <h3 className="text-xl md:text-2xl font-bold text-[#0d233f] font-display mb-2">{title}</h3>
-        <p className="text-lg font-bold text-[#0d233f] mb-3">{price}</p>
+        <p className={`text-lg font-bold bg-gradient-to-r ${gradient} bg-clip-text text-transparent mb-3`}>{price}</p>
         <p className="text-[#475569] text-sm mb-5 flex-grow">{description}</p>
         <Link
           to={to}
-          className="inline-flex items-center justify-center gap-2 bg-[#0d233f] text-white px-5 py-3 rounded-xl font-semibold hover:bg-[#1a3a5c] hover:shadow-md transition-all duration-300 w-full"
+          className={`inline-flex items-center justify-center gap-2 bg-gradient-to-r ${gradient} text-white px-5 py-3 rounded-xl font-semibold hover:shadow-lg hover:scale-[1.02] transition-all duration-300 w-full`}
         >
           Ver más
           <ArrowRight className="w-4 h-4" />
@@ -241,6 +246,7 @@ export default function DesarrolloWeb() {
     <div className="bg-[#fafbfc]">
       <section className="py-10 md:py-14 bg-[#fafbfc]">
         <div className="max-w-6xl mx-auto px-4">
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
             <div data-aos="fade-up" data-aos-delay="100">
               <ProductCard
@@ -248,6 +254,7 @@ export default function DesarrolloWeb() {
                 price="Desde $70.000"
                 description="Página web para presentar tu servicio o producto. 3 versiones disponibles: Base, Autogestionable y con Pestañas extra."
                 icon={Globe}
+                gradient="from-cyan-500 to-blue-500"
                 to="/servicios/landing-page"
               />
             </div>
@@ -258,6 +265,7 @@ export default function DesarrolloWeb() {
                 price="Desde $160.000"
                 description="Página con sistema de reservas online. Ideal para médicos, peluquerías, consultorios y más."
                 icon={Calendar}
+                gradient="from-emerald-500 to-teal-500"
                 to="/servicios/turnos"
               />
             </div>
@@ -268,6 +276,7 @@ export default function DesarrolloWeb() {
                 price="Desde $200.000"
                 description="Sistema web para gestionar tu inventario. Controlá entradas, salidas y recibí alertas."
                 icon={Package}
+                gradient="from-amber-500 to-orange-500"
                 to="/servicios/control-stock"
               />
             </div>
@@ -278,6 +287,7 @@ export default function DesarrolloWeb() {
                 price="Desde $200.000"
                 description="Plataforma propia para crear y vender cursos online bajo tu marca."
                 icon={GraduationCap}
+                gradient="from-indigo-500 to-purple-500"
                 to="/servicios/e-learning"
               />
             </div>
@@ -288,6 +298,7 @@ export default function DesarrolloWeb() {
                 price="Desde $375.000"
                 description="Tienda online completa para vender productos con pagos y envíos integrados."
                 icon={ShoppingCart}
+                gradient="from-rose-500 to-pink-500"
                 to="/servicios/e-commerce"
               />
             </div>

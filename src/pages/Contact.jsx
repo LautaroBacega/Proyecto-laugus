@@ -1,13 +1,16 @@
 "use client"
 
 import { useState, useRef } from "react"
-import { Send } from "lucide-react"
+import { Send, Calendar } from "lucide-react"
 import emailjs from "@emailjs/browser"
 import SEO from "../components/SEO"
+import { CalendlyInline } from "../components/CalendlyWidget"
 
 const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
 const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+
+const CALENDLY_URL = "https://calendly.com/lautibacega/30min" // Reemplaza con tu URL real
 
 const contactSchema = {
   "@context": "https://schema.org",
@@ -39,6 +42,7 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
   const [error, setError] = useState(null)
+  const [showCalendly, setShowCalendly] = useState(false)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -95,97 +99,127 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className="max-w-xl mx-auto">
-          {/* Contact Form */}
-          <div
-            className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 card-hover"
-            data-aos="fade-up"
-            data-aos-delay="200"
+        <div className="flex justify-center gap-4 mb-8" data-aos="fade-up" data-aos-delay="150">
+          <button
+            onClick={() => setShowCalendly(false)}
+            className={`flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
+              !showCalendly ? "bg-[#0d233f] text-white" : "bg-gray-100 text-[#475569] hover:bg-gray-200"
+            }`}
           >
-            {submitted ? (
-              <div className="text-center py-8" data-aos="zoom-in">
-                <div className="w-16 h-16 bg-[#06b6d4]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Send className="w-8 h-8 text-[#06b6d4]" />
-                </div>
-                <h3 className="text-xl font-semibold text-[#0d233f] mb-2">¡Mensaje enviado!</h3>
-                <p className="text-[#475569]">Te contactaremos pronto.</p>
-                <button
-                  onClick={() => setSubmitted(false)}
-                  className="mt-4 text-[#06b6d4] font-medium hover:underline hover-lift"
-                >
-                  Enviar otro mensaje
-                </button>
-              </div>
-            ) : (
-              <form ref={formRef} onSubmit={handleSubmit}>
-                <h3 className="text-xl font-semibold text-[#0d233f] mb-6 hover-lift">Envianos un mensaje</h3>
+            <Send className="w-5 h-5" />
+            Enviar mensaje
+          </button>
+          <button
+            onClick={() => setShowCalendly(true)}
+            className={`flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
+              showCalendly ? "bg-[#06b6d4] text-white" : "bg-gray-100 text-[#475569] hover:bg-gray-200"
+            }`}
+          >
+            <Calendar className="w-5 h-5" />
+            Agendar reunión
+          </button>
+        </div>
 
-                {error && (
-                  <div className="mb-4 p-3 bg-red-50 border border-red-200 text-red-600 rounded-lg text-sm">
-                    {error}
+        <div className="max-w-xl mx-auto">
+          {showCalendly ? (
+            <div
+              className="bg-white p-4 rounded-2xl shadow-sm border border-gray-100"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <CalendlyInline url={CALENDLY_URL} />
+            </div>
+          ) : (
+            <div
+              className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 card-hover"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              {submitted ? (
+                <div className="text-center py-8" data-aos="zoom-in">
+                  <div className="w-16 h-16 bg-[#06b6d4]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Send className="w-8 h-8 text-[#06b6d4]" />
                   </div>
-                )}
-
-                <div className="space-y-4">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-[#0d233f] mb-2">
-                      Nombre
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#06b6d4] focus:border-transparent transition-all duration-300"
-                      placeholder="Tu nombre"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-[#0d233f] mb-2">
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#06b6d4] focus:border-transparent transition-all duration-300"
-                      placeholder="tu@email.com"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="project" className="block text-sm font-medium text-[#0d233f] mb-2">
-                      Mensaje
-                    </label>
-                    <textarea
-                      id="project"
-                      name="project"
-                      value={formData.project}
-                      onChange={handleChange}
-                      required
-                      rows={4}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#06b6d4] focus:border-transparent transition-all duration-300 resize-none"
-                      placeholder="Contanos sobre tu proyecto..."
-                    />
-                  </div>
-
+                  <h3 className="text-xl font-semibold text-[#0d233f] mb-2">¡Mensaje enviado!</h3>
+                  <p className="text-[#475569]">Te contactaremos pronto.</p>
                   <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full bg-[#0d233f] text-white py-3 rounded-lg font-semibold hover:bg-[#1e3a5f] transition-colors disabled:opacity-50 disabled:cursor-not-allowed btn-hover"
+                    onClick={() => setSubmitted(false)}
+                    className="mt-4 text-[#06b6d4] font-medium hover:underline hover-lift"
                   >
-                    {isSubmitting ? "Enviando..." : "Enviar mensaje"}
+                    Enviar otro mensaje
                   </button>
                 </div>
-              </form>
-            )}
-          </div>
+              ) : (
+                <form ref={formRef} onSubmit={handleSubmit}>
+                  <h3 className="text-xl font-semibold text-[#0d233f] mb-6 hover-lift">Envianos un mensaje</h3>
+
+                  {error && (
+                    <div className="mb-4 p-3 bg-red-50 border border-red-200 text-red-600 rounded-lg text-sm">
+                      {error}
+                    </div>
+                  )}
+
+                  <div className="space-y-4">
+                    <div>
+                      <label htmlFor="name" className="block text-sm font-medium text-[#0d233f] mb-2">
+                        Nombre
+                      </label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#06b6d4] focus:border-transparent transition-all duration-300"
+                        placeholder="Tu nombre"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-medium text-[#0d233f] mb-2">
+                        Email
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#06b6d4] focus:border-transparent transition-all duration-300"
+                        placeholder="tu@email.com"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="project" className="block text-sm font-medium text-[#0d233f] mb-2">
+                        Mensaje
+                      </label>
+                      <textarea
+                        id="project"
+                        name="project"
+                        value={formData.project}
+                        onChange={handleChange}
+                        required
+                        rows={4}
+                        className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#06b6d4] focus:border-transparent transition-all duration-300 resize-none"
+                        placeholder="Contanos sobre tu proyecto..."
+                      />
+                    </div>
+
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full bg-[#0d233f] text-white py-3 rounded-lg font-semibold hover:bg-[#1e3a5f] transition-colors disabled:opacity-50 disabled:cursor-not-allowed btn-hover"
+                    >
+                      {isSubmitting ? "Enviando..." : "Enviar mensaje"}
+                    </button>
+                  </div>
+                </form>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </div>

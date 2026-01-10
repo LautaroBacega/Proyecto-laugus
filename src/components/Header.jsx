@@ -98,14 +98,14 @@ export default function Header() {
 
               {/* Dropdown Menu */}
               {isDesarrolloOpen && (
-                <div className="absolute top-full left-0 pt-2 z-50">
-                  <div className="w-64 bg-[#0d233f] border border-[#1a3a5c] rounded-lg shadow-xl py-2">
-                    {productosDesarrolloWeb.map((producto) => (
+                <div className="absolute top-full left-0 z-50">
+                  <div className="w-64 bg-[#0d233f] border border-[#1a3a5c] rounded-lg shadow-xl">
+                    {productosDesarrolloWeb.map((producto, index) => (
                       <div key={producto.name} className="relative">
                         {producto.subcategories ? (
                           // Producto con subcategorías
                           <div
-                            className="relative pr-2 -mr-2"
+                            className="relative"
                             onMouseEnter={() => setIsDisenoWebOpen(true)}
                             onMouseLeave={() => setIsDisenoWebOpen(false)}
                           >
@@ -115,7 +115,7 @@ export default function Header() {
                                 setIsDesarrolloOpen(false)
                                 setIsDisenoWebOpen(false)
                               }}
-                              className="w-full flex items-center justify-between px-4 py-2 text-sm text-white hover:bg-[#1a3a5c] hover:text-[#06b6d4] transition-colors"
+                              className={`w-full flex items-center justify-between px-4 py-2 text-sm text-white hover:bg-[#1a3a5c] hover:text-[#06b6d4] transition-colors ${index === 0 ? "rounded-t-lg" : ""}`}
                             >
                               {producto.name}
                               <ChevronRight size={14} />
@@ -123,9 +123,9 @@ export default function Header() {
 
                             {/* Subcategorías */}
                             {isDisenoWebOpen && (
-                              <div className="absolute left-full top-0 pl-2">
-                                <div className="w-56 bg-[#0d233f] border border-[#1a3a5c] rounded-lg shadow-xl py-2">
-                                  {producto.subcategories.map((sub) => (
+                              <div className="absolute left-full top-0">
+                                <div className="w-56 bg-[#0d233f] border border-[#1a3a5c] rounded-lg shadow-xl">
+                                  {producto.subcategories.map((sub, subIndex) => (
                                     <Link
                                       key={sub.name}
                                       to={sub.path}
@@ -133,7 +133,7 @@ export default function Header() {
                                         setIsDesarrolloOpen(false)
                                         setIsDisenoWebOpen(false)
                                       }}
-                                      className="block px-4 py-2 text-sm text-white hover:bg-[#1a3a5c] hover:text-[#06b6d4] transition-colors"
+                                      className={`block px-4 py-2 text-sm text-white hover:bg-[#1a3a5c] hover:text-[#06b6d4] transition-colors ${subIndex === 0 ? "rounded-t-lg" : ""} ${subIndex === producto.subcategories.length - 1 ? "rounded-b-lg" : ""}`}
                                     >
                                       {sub.name}
                                     </Link>
@@ -147,7 +147,7 @@ export default function Header() {
                           <Link
                             to={producto.path}
                             onClick={() => setIsDesarrolloOpen(false)}
-                            className="block px-4 py-2 text-sm text-white hover:bg-[#1a3a5c] hover:text-[#06b6d4] transition-colors"
+                            className={`block px-4 py-2 text-sm text-white hover:bg-[#1a3a5c] hover:text-[#06b6d4] transition-colors ${index === productosDesarrolloWeb.length - 1 ? "rounded-b-lg" : ""}`}
                           >
                             {producto.name}
                           </Link>

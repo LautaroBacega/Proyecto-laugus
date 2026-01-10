@@ -10,7 +10,7 @@ const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
 const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 
-const CALENDLY_URL = "https://calendly.com/lautibacega/30min" // Reemplaza con tu URL real
+const CALENDLY_URL = "https://calendly.com/laugus/30min" // Reemplaza con tu URL real
 
 const contactSchema = {
   "@context": "https://schema.org",

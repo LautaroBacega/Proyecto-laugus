@@ -145,6 +145,11 @@ export default function LandingBasica() {
               </div>
 
               <div className="lg:hidden space-y-4">
+                {/* Mobile: Precio y primer año */}
+                <div className="bg-white border border-gray-200 rounded-xl p-4 text-center shadow-sm">
+                  <h2 className="text-xl font-bold text-[#0d233f]">Landing Page Básica</h2>
+                </div>
+
                 {/* Precio */}
                 <div className="bg-white border border-gray-200 rounded-xl p-5 text-center shadow-sm hover:bg-gray-50 hover:border-gray-300 hover:shadow-md transition-all duration-500 ease-out">
                   <p className="text-xs uppercase tracking-wider mb-1 text-gray-500">Precio único</p>
@@ -266,6 +271,11 @@ export default function LandingBasica() {
 
             <div className="hidden lg:block lg:w-[32%]">
               <div className="space-y-4" data-aos="fade-left">
+                {/* Mobile: Precio y primer año */}
+                <div className="bg-white border border-gray-200 rounded-xl p-4 text-center shadow-sm">
+                  <h2 className="text-xl font-bold text-[#0d233f]">Landing Page Básica</h2>
+                </div>
+
                 {/* Precio desktop */}
                 <div className="bg-white border border-gray-200 rounded-xl p-5 text-center shadow-sm hover:bg-gray-50 hover:border-gray-300 hover:shadow-md transition-all duration-500 ease-out">
                   <p className="text-xs uppercase tracking-wider mb-1 text-gray-500">Precio único</p>

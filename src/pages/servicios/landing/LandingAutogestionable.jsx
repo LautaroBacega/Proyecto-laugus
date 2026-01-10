@@ -109,6 +109,10 @@ export default function LandingAutogestionable() {
 
               {/* Mobile: Precio y primer año incluye */}
               <div className="lg:hidden space-y-4">
+                <div className="bg-white border border-gray-200 rounded-xl p-4 text-center shadow-sm">
+                  <h2 className="text-xl font-bold text-[#0d233f]">Landing Page Autogestionable</h2>
+                </div>
+
                 {/* Precio */}
                 <div className="bg-white rounded-xl p-5 text-center shadow-sm border border-gray-200 hover:border-gray-300 hover:bg-gray-50 transition-all duration-500 ease-out">
                   <p className="text-xs uppercase tracking-wider mb-1 text-gray-500">Precio único</p>
@@ -229,6 +233,10 @@ export default function LandingAutogestionable() {
             {/* COLUMNA DERECHA - 32% (desktop only) */}
             <div className="hidden lg:block lg:w-[32%]">
               <div className="space-y-4" data-aos="fade-left">
+                <div className="bg-white border border-gray-200 rounded-xl p-4 text-center shadow-sm">
+                  <h2 className="text-xl font-bold text-[#0d233f]">Landing Page Autogestionable</h2>
+                </div>
+
                 {/* Precio desktop */}
                 <div className="bg-white rounded-xl p-5 text-center shadow-sm border border-gray-200 hover:border-gray-300 hover:bg-gray-50 transition-all duration-500 ease-out">
                   <p className="text-xs uppercase tracking-wider mb-1 text-gray-500">Precio único</p>
